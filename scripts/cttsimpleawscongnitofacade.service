@@ -1,0 +1,29 @@
+[Unit]
+Description=CTT Express Simple JWT/IAM Server
+# Notas:
+# 1) Recordar ejecutar "sudo systemctl daemon-reload"
+#    para activar modificaciones a este archivo
+# 2) Ubicación de este "Systemd Unit":
+#    Centos: /usr/lib/systemd/system/
+#    Ubuntu: /lib/systemd/system/
+[Service]
+TimeoutStartSec=5min
+Type=simple
+User=administrador
+Group=administrador
+WorkingDirectory=/home/administrador/cttexpresssimpleiam
+Environment="CTTEXPRESSSIMPLEIAM_HOME=/home/administrador/cttexpresssimpleiam"
+Environment="LOGS_HOME=/home/administrador/cttexpresssimpleiam/logs"
+
+ExecStart=/usr/bin/java -jar /home/administrador/cttexpresssimpleiam/binaries/simpleiamserver-1.0.0.jar server /home/administrador/cttexpresssimpleiam/main-configuration.yml
+ExecStop=/bin/kill -SIGTERM $MAINPID
+
+SuccessExitStatus=143
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cttexpresssimpleiam
+LimitNOFILE=500000
+LimitNPROC=500000
+
+[Install]
+WantedBy=multi-user.target
