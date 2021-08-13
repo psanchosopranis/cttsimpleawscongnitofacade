@@ -5,6 +5,8 @@ import com.cttexpress.rest.exceptions.CustomConstraintViolationExceptionMapper;
 import com.cttexpress.rest.exceptions.CustomExceptionMapper;
 import com.cttexpress.rest.exceptions.CustomThrowableExceptionMapper;
 import com.cttexpress.rest.representations.MgmtUser;
+import com.cttexpress.rest.resources.AppStatusResource;
+import com.cttexpress.rest.resources.RpcForceUserPasswordReset;
 import com.cttexpress.utils.DateUtils;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
@@ -56,10 +58,12 @@ public class MainApplication extends Application<MainConfiguration> {
         );
 
         LOGGER.info("Registrando recursos ...");
+        environment.jersey().register(new AppStatusResource(environment.getValidator()));
+        environment.jersey().register(new RpcForceUserPasswordReset(environment.getValidator()));
 
         LOGGER.info("Registrando recursos de Healthcheck ...");
         //Application health check
-        environment.healthChecks().register("APIHealthCheck", new AppHealthCheck());
+        environment.healthChecks().register("cttsimpleawscognitofacade", new AppHealthCheck());
 
         LOGGER.info("Registrando  CustomExceptionMapper...");
         environment.jersey().register(new CustomExceptionMapper());

@@ -1,5 +1,5 @@
 server:
-  applicationContextPath: /oauth2/default/v1
+  applicationContextPath: /awscognitofacade/simple/v1
   adminContextPath: /admin
   registerDefaultExceptionMappers: false
   applicationConnectors:
@@ -20,6 +20,7 @@ logging:
       target: stderr
 
     - type: file
+      threshold: INFO
       # The file to which current statements will be logged.
       currentLogFilename: ${LOGS_HOME}/cttexpresssimpleiam.log
 

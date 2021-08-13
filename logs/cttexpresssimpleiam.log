@@ -130,3 +130,444 @@ INFO  [2021-08-13 11:49:56,160] org.eclipse.jetty.server.AbstractConnector: Stop
 INFO  [2021-08-13 11:49:56,161] org.eclipse.jetty.server.AbstractConnector: Stopped admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
 INFO  [2021-08-13 11:49:56,162] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1624775{/admin,null,UNAVAILABLE}
 INFO  [2021-08-13 11:49:56,169] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 12:02:40,675] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /oauth2/default/v1
+INFO  [2021-08-13 12:02:40,677] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 12:02:40,677] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 12:02:40,754] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 12:02:40,754] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 12:02:40,755] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 12:02:40,759] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+     _                 _      _                                              
+    (_)               | |    (_)                                             
+ ___ _ _ __ ___  _ __ | | ___ _  __ _ _ __ ___  ___  ___ _ ____   _____ _ __ 
+/ __| | '_ ` _ \| '_ \| |/ _ \ |/ _` | '_ ` _ \/ __|/ _ \ '__\ \ / / _ \ '__|
+\__ \ | | | | | | |_) | |  __/ | (_| | | | | | \__ \  __/ |   \ V /  __/ |   
+|___/_|_| |_| |_| .__/|_|\___|_|\__,_|_| |_| |_|___/\___|_|    \_/ \___|_|   
+                | |                                                          
+                |_|                                                          
+
+
+
+INFO  [2021-08-13 12:02:40,816] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:02:40,817] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:02:40,818] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 12:02:41,164] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2021-08-13 12:02:41,165] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,AVAILABLE}
+INFO  [2021-08-13 12:02:41,168] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 12:02:41,172] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1624775{/admin,null,AVAILABLE}
+INFO  [2021-08-13 12:02:41,179] org.eclipse.jetty.server.AbstractConnector: Started application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:02:41,181] org.eclipse.jetty.server.AbstractConnector: Started admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:02:41,182] org.eclipse.jetty.server.Server: Started @1534ms
+INFO  [2021-08-13 12:02:51,616] org.eclipse.jetty.server.AbstractConnector: Stopped application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:02:51,617] org.eclipse.jetty.server.AbstractConnector: Stopped admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:02:51,619] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1624775{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 12:02:51,625] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 12:03:20,247] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /oauth2/default/v1
+INFO  [2021-08-13 12:03:20,249] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 12:03:20,249] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 12:03:20,334] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 12:03:20,334] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 12:03:20,334] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 12:03:20,338] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 12:03:20,429] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:03:20,429] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:03:20,431] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 12:03:20,826] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2021-08-13 12:03:20,830] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,AVAILABLE}
+INFO  [2021-08-13 12:03:20,835] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 12:03:20,841] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1624775{/admin,null,AVAILABLE}
+INFO  [2021-08-13 12:03:20,861] org.eclipse.jetty.server.AbstractConnector: Started application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:03:20,862] org.eclipse.jetty.server.AbstractConnector: Started admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:03:20,862] org.eclipse.jetty.server.Server: Started @1643ms
+INFO  [2021-08-13 12:08:55,939] org.eclipse.jetty.server.AbstractConnector: Stopped application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:08:55,942] org.eclipse.jetty.server.AbstractConnector: Stopped admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:08:55,944] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1624775{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 12:08:55,950] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 12:09:07,741] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /oauth2/default/v1
+INFO  [2021-08-13 12:09:07,744] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 12:09:07,745] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 12:09:07,831] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 12:09:07,832] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 12:09:07,832] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 12:09:07,836] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 12:09:07,904] org.eclipse.jetty.setuid.SetUIDListener: Opened application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:09:07,904] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:09:07,905] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 12:09:08,169] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    NONE
+
+INFO  [2021-08-13 12:09:08,170] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,AVAILABLE}
+INFO  [2021-08-13 12:09:08,174] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 12:09:08,178] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1624775{/admin,null,AVAILABLE}
+INFO  [2021-08-13 12:09:08,187] org.eclipse.jetty.server.AbstractConnector: Started application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:09:08,191] org.eclipse.jetty.server.AbstractConnector: Started admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:09:08,196] org.eclipse.jetty.server.Server: Started @1362ms
+INFO  [2021-08-13 12:38:53,159] org.eclipse.jetty.server.AbstractConnector: Stopped application@6eb17ec8{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:38:53,160] org.eclipse.jetty.server.AbstractConnector: Stopped admin@730f9695{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:38:53,162] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1624775{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 12:38:53,166] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@55b5cd2b{/oauth2/default/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 12:39:58,316] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /oauth2/default/v1
+INFO  [2021-08-13 12:39:58,318] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 12:39:58,319] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 12:39:58,392] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 12:39:58,395] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 12:39:58,395] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 12:39:58,399] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 12:39:58,490] org.eclipse.jetty.setuid.SetUIDListener: Opened application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:39:58,491] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:39:58,493] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 12:39:58,916] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 12:39:58,918] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@66bf40e5{/oauth2/default/v1,null,AVAILABLE}
+INFO  [2021-08-13 12:39:58,923] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 12:39:58,931] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4f379769{/admin,null,AVAILABLE}
+INFO  [2021-08-13 12:39:58,963] org.eclipse.jetty.server.AbstractConnector: Started application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:39:58,967] org.eclipse.jetty.server.AbstractConnector: Started admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:39:58,967] org.eclipse.jetty.server.Server: Started @1567ms
+INFO  [2021-08-13 12:43:32,833] com.cttexpress.rest.resources.AppStatusResource: GET getCurrentAppStatus Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[47520].
+INFO  [2021-08-13 12:43:43,355] org.eclipse.jetty.server.AbstractConnector: Stopped application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:43:43,356] org.eclipse.jetty.server.AbstractConnector: Stopped admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:43:43,357] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@4f379769{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 12:43:43,359] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@66bf40e5{/oauth2/default/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 12:47:25,172] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 12:47:25,174] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 12:47:25,174] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 12:47:25,261] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 12:47:25,263] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 12:47:25,264] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 12:47:25,268] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 12:47:25,345] org.eclipse.jetty.setuid.SetUIDListener: Opened application@4649d70a{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:47:25,345] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@5d43409a{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:47:25,346] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 12:47:25,721] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 12:47:25,722] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5a058be5{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 12:47:25,726] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 12:47:25,742] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5eb5da12{/admin,null,AVAILABLE}
+INFO  [2021-08-13 12:47:25,757] org.eclipse.jetty.server.AbstractConnector: Started application@4649d70a{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:47:25,758] org.eclipse.jetty.server.AbstractConnector: Started admin@5d43409a{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:47:25,758] org.eclipse.jetty.server.Server: Started @1700ms
+INFO  [2021-08-13 12:48:37,170] com.cttexpress.rest.resources.AppStatusResource: GET getCurrentAppStatus Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[47692].
+INFO  [2021-08-13 12:49:04,685] org.eclipse.jetty.server.AbstractConnector: Stopped application@4649d70a{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 12:49:04,687] org.eclipse.jetty.server.AbstractConnector: Stopped admin@5d43409a{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 12:49:04,690] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5eb5da12{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 12:49:04,702] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5a058be5{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 13:14:26,407] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 13:14:26,410] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 13:14:26,410] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 13:14:26,563] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 13:14:26,567] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 13:14:26,568] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 13:14:26,578] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 13:14:26,709] org.eclipse.jetty.setuid.SetUIDListener: Opened application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:14:26,710] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:14:26,714] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 13:14:27,410] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 13:14:27,412] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@66bf40e5{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 13:14:27,435] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 13:14:27,447] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4f379769{/admin,null,AVAILABLE}
+INFO  [2021-08-13 13:14:27,467] org.eclipse.jetty.server.AbstractConnector: Started application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:14:27,478] org.eclipse.jetty.server.AbstractConnector: Started admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:14:27,478] org.eclipse.jetty.server.Server: Started @3346ms
+INFO  [2021-08-13 13:14:33,270] org.eclipse.jetty.server.AbstractConnector: Stopped application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:14:33,272] org.eclipse.jetty.server.AbstractConnector: Stopped admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:14:33,275] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@4f379769{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 13:14:33,281] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@66bf40e5{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 13:50:06,258] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 13:50:06,265] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 13:50:06,265] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 13:50:06,360] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 13:50:06,364] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 13:50:06,364] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 13:50:06,371] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 13:50:06,449] org.eclipse.jetty.setuid.SetUIDListener: Opened application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:50:06,449] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:50:06,451] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 13:50:06,862] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 13:50:06,863] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@66bf40e5{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 13:50:06,867] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 13:50:06,871] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4f379769{/admin,null,AVAILABLE}
+INFO  [2021-08-13 13:50:06,893] org.eclipse.jetty.server.AbstractConnector: Started application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:50:06,900] org.eclipse.jetty.server.AbstractConnector: Started admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:50:06,900] org.eclipse.jetty.server.Server: Started @1689ms
+INFO  [2021-08-13 13:50:15,686] org.eclipse.jetty.server.AbstractConnector: Stopped application@7a0ef219{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:50:15,686] org.eclipse.jetty.server.AbstractConnector: Stopped admin@1b1f5012{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:50:15,688] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@4f379769{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 13:50:15,690] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@66bf40e5{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 13:51:36,997] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 13:51:36,999] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 13:51:37,000] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 13:51:37,086] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 13:51:37,089] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 13:51:37,090] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 13:51:37,095] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 13:51:37,174] org.eclipse.jetty.setuid.SetUIDListener: Opened application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:51:37,174] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:51:37,175] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 13:51:37,515] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 13:51:37,516] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 13:51:37,519] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 13:51:37,523] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@76d7881e{/admin,null,AVAILABLE}
+INFO  [2021-08-13 13:51:37,538] org.eclipse.jetty.server.AbstractConnector: Started application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:51:37,540] org.eclipse.jetty.server.AbstractConnector: Started admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:51:37,540] org.eclipse.jetty.server.Server: Started @1790ms
+INFO  [2021-08-13 13:55:40,107] org.eclipse.jetty.server.AbstractConnector: Stopped application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 13:55:40,108] org.eclipse.jetty.server.AbstractConnector: Stopped admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 13:55:40,109] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@76d7881e{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 13:55:40,118] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 14:07:25,368] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 14:07:25,371] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 14:07:25,371] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 14:07:25,453] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 14:07:25,456] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 14:07:25,457] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 14:07:25,462] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 14:07:25,520] org.eclipse.jetty.setuid.SetUIDListener: Opened application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:07:25,521] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:07:25,522] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 14:07:25,861] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 14:07:25,862] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 14:07:25,865] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 14:07:25,869] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@76d7881e{/admin,null,AVAILABLE}
+INFO  [2021-08-13 14:07:25,877] org.eclipse.jetty.server.AbstractConnector: Started application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:07:25,880] org.eclipse.jetty.server.AbstractConnector: Started admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:07:25,881] org.eclipse.jetty.server.Server: Started @1623ms
+INFO  [2021-08-13 14:07:31,209] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [f41s4n@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[49270].
+INFO  [2021-08-13 14:08:00,901] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [f41s4n@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[49274].
+INFO  [2021-08-13 14:09:58,903] org.eclipse.jetty.server.AbstractConnector: Stopped application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:09:58,905] org.eclipse.jetty.server.AbstractConnector: Stopped admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:09:58,906] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@76d7881e{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 14:09:58,910] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 14:10:04,070] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 14:10:04,072] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 14:10:04,073] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 14:10:04,155] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 14:10:04,158] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 14:10:04,158] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 14:10:04,162] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 14:10:04,245] org.eclipse.jetty.setuid.SetUIDListener: Opened application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:10:04,246] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:10:04,247] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 14:10:04,627] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 14:10:04,628] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 14:10:04,631] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 14:10:04,636] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@76d7881e{/admin,null,AVAILABLE}
+INFO  [2021-08-13 14:10:04,645] org.eclipse.jetty.server.AbstractConnector: Started application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:10:04,648] org.eclipse.jetty.server.AbstractConnector: Started admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:10:04,648] org.eclipse.jetty.server.Server: Started @1564ms
+INFO  [2021-08-13 14:10:11,402] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [f41s4n@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[49360].
+INFO  [2021-08-13 14:10:21,496] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [f41s4n@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[49362].
+INFO  [2021-08-13 14:11:14,849] org.eclipse.jetty.server.AbstractConnector: Stopped application@4760f169{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:11:14,850] org.eclipse.jetty.server.AbstractConnector: Stopped admin@261ea657{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:11:14,851] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@76d7881e{/admin,null,UNAVAILABLE}
+INFO  [2021-08-13 14:11:14,859] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@2001e48c{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-13 14:35:56,240] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-13 14:35:56,242] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-13 14:35:56,242] com.cttexpress.MainApplication: Comprobando Usuarios de Gestión ...
+INFO  [2021-08-13 14:35:56,316] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-13 14:35:56,320] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-13 14:35:56,320] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-13 14:35:56,326] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-13 14:35:56,403] org.eclipse.jetty.setuid.SetUIDListener: Opened application@25290bca{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:35:56,403] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@76563d26{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:35:56,404] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-13 14:35:56,732] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    GET     /status (com.cttexpress.rest.resources.AppStatusResource)
+
+INFO  [2021-08-13 14:35:56,734] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@4cc65c2{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-13 14:35:56,740] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-13 14:35:56,745] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@56b8aaf1{/admin,null,AVAILABLE}
+INFO  [2021-08-13 14:35:56,757] org.eclipse.jetty.server.AbstractConnector: Started application@25290bca{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-13 14:35:56,760] org.eclipse.jetty.server.AbstractConnector: Started admin@76563d26{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-13 14:35:56,760] org.eclipse.jetty.server.Server: Started @1639ms
+INFO  [2021-08-13 14:36:15,246] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[50158].
+INFO  [2021-08-13 14:37:03,881] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[50230].
+INFO  [2021-08-13 14:37:13,767] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmaili.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[50234].
+INFO  [2021-08-13 14:37:28,882] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmaili.com] Remote Host[127.0.0.1] Remote Address[127.0.0.1] Remote Port[50238].
