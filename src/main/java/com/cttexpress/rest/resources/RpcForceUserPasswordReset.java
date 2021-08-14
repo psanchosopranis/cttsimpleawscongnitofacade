@@ -3,17 +3,19 @@ package com.cttexpress.rest.resources;
 import com.cttexpress.config.MyAwsBasicCredentials;
 import com.cttexpress.config.MyAwsUserPool;
 import com.cttexpress.rest.exceptions.CustomException;
-import com.cttexpress.rest.representations.RpcForceUserPasswordResetResponse;
 import org.hibernate.validator.constraints.Length;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
-import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.cognitoidentityprovider.CognitoIdentityProviderClient;
 import software.amazon.awssdk.services.cognitoidentityprovider.model.AdminResetUserPasswordRequest;
 import software.amazon.awssdk.services.cognitoidentityprovider.model.AdminResetUserPasswordResponse;
+import software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException;
+import software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException;
 
+
+import javax.annotation.security.RolesAllowed;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Validator;
@@ -41,6 +43,7 @@ public class RpcForceUserPasswordReset {
     }
 
     @POST
+    @RolesAllowed({"ADMIN"})
     @Path("/{userEmail}")
     public Response rpcForceUserPasswordReset(
             @Context HttpServletRequest req,
@@ -52,12 +55,32 @@ public class RpcForceUserPasswordReset {
                 "] Remote Address[" + req.getRemoteAddr() +
                 "] Remote Port[" + String.valueOf(req.getRemotePort()) + "].");
         try {
-            RpcForceUserPasswordResetResponse rpcForceUserPasswordResetResponse = new RpcForceUserPasswordResetResponse("OK");
+
             adminResetUserPassword(userEmail);
             return Response
-                    .status(Response.Status.OK)
-                    .entity(rpcForceUserPasswordResetResponse).build();
+                    .status(Status.NO_CONTENT)
+                    .build();
 
+        } catch (UserNotFoundException ex) {
+            throw new CustomException(
+                    Status.NOT_FOUND,
+                    "USER-NOT-FOUND",
+                    "El usuario [" + userEmail + "] no existe en el user Pool.",
+                    ex);
+        } catch (NotAuthorizedException ex) {
+            if (ex.getMessage() != null && ex.getMessage().indexOf("User is disabled") >= 0) {
+                throw new CustomException(
+                        Status.CONFLICT,
+                        "USER-IS-DISABLED",
+                        "El usuario [" + userEmail + "] está DESHABILITADO.",
+                        ex);
+            } else {
+                throw new CustomException(
+                        Status.INTERNAL_SERVER_ERROR,
+                        "ERR-500-RPC-FORCE-USER-PASSWORD_RESET",
+                        "process-exception-rpc-force-user-password-reset",
+                        ex);
+            }
         } catch (Throwable ex) {
             throw new CustomException(
                     Status.INTERNAL_SERVER_ERROR,

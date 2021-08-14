@@ -1,14 +1,15 @@
 package com.cttexpress;
 
 import com.cttexpress.config.AppHealthCheck;
+import com.cttexpress.rest.auth.*;
 import com.cttexpress.rest.exceptions.CustomConstraintViolationExceptionMapper;
 import com.cttexpress.rest.exceptions.CustomExceptionMapper;
 import com.cttexpress.rest.exceptions.CustomThrowableExceptionMapper;
-import com.cttexpress.rest.representations.MgmtUser;
-import com.cttexpress.rest.resources.AppStatusResource;
-import com.cttexpress.rest.resources.RpcForceUserPasswordReset;
-import com.cttexpress.utils.DateUtils;
+import com.cttexpress.rest.resources.*;
 import io.dropwizard.Application;
+import io.dropwizard.auth.AuthDynamicFeature;
+import io.dropwizard.auth.AuthValueFactoryProvider;
+import io.dropwizard.auth.basic.BasicCredentialAuthFilter;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 
@@ -17,6 +18,7 @@ import io.dropwizard.setup.Environment;
 import com.cttexpress.config.MainConfiguration;
 
 
+import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,20 +48,16 @@ public class MainApplication extends Application<MainConfiguration> {
     @Override
     public void run(MainConfiguration configuration, Environment environment) throws Exception {
 
-        LOGGER.info("Comprobando Usuarios de Gestión ...");
+        LOGGER.info("Inicializando Usuarios de Gestión ...");
+        MockCredentialsRepo mockCredentialsRepo = new MockCredentialsRepo();
 
-        String newAdminPassword = "changeit";
-        MgmtUser newMgmtUser = new MgmtUser(
-                    "admin",
-                    MgmtUser.bcryptPassword(newAdminPassword),
-                    "ADMIN,SYSTEM",
-                    "ACTIVE",
-                    DateUtils.getFullTimeStampFormattedWithMillis()
-        );
 
         LOGGER.info("Registrando recursos ...");
-        environment.jersey().register(new AppStatusResource(environment.getValidator()));
         environment.jersey().register(new RpcForceUserPasswordReset(environment.getValidator()));
+        environment.jersey().register(new RpcDisableUser(environment.getValidator()));
+        environment.jersey().register(new RpcEnableUser(environment.getValidator()));
+        environment.jersey().register(new RpcDeleteUser(environment.getValidator()));
+        environment.jersey().register(new RpcCreateUser(environment.getValidator()));
 
         LOGGER.info("Registrando recursos de Healthcheck ...");
         //Application health check
@@ -70,6 +68,15 @@ public class MainApplication extends Application<MainConfiguration> {
         environment.jersey().register(new CustomThrowableExceptionMapper());
         environment.jersey().register(new CustomConstraintViolationExceptionMapper());
 
-
+        //****** Dropwizard security - custom classes ***********/
+        LOGGER.info("Registrando BasicCredentialAuthFilter ...");
+        environment.jersey().register(new AuthDynamicFeature(new BasicCredentialAuthFilter.Builder<MgmtPrincipal>()
+                .setAuthenticator(new AppBasicAuthenticator(mockCredentialsRepo))
+                .setAuthorizer(new AppAuthorizer())
+                .setRealm("cttexpresssimpleiam")
+                .setUnauthorizedHandler(new CustomUnauthorizedHandler())
+                .buildAuthFilter()));
+        environment.jersey().register(RolesAllowedDynamicFeature.class);
+        environment.jersey().register(new AuthValueFactoryProvider.Binder<>(MgmtPrincipal.class));
     }
 }
