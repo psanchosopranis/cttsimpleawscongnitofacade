@@ -21,6 +21,7 @@ public class CreateUserRequest {
     protected HashMap<String, String> custom_attributes;
 
     public CreateUserRequest() {
+        this.custom_attributes = new HashMap<>();
     }
 
     public CreateUserRequest(String email, String name, String phone_number, HashMap<String, String> custom_attributes) {

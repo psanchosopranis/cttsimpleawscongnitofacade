@@ -18,6 +18,7 @@ public class UpdateUserAttributesRequest {
     protected HashMap<String, String> custom_attributes;
 
     public UpdateUserAttributesRequest() {
+        this.custom_attributes = new HashMap<>();
     }
 
     public UpdateUserAttributesRequest(String name, String phone_number, HashMap<String, String> custom_attributes) {

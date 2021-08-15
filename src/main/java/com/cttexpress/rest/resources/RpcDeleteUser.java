@@ -78,7 +78,7 @@ public class RpcDeleteUser {
     }
 
 
-    public static AdminDeleteUserResponse adminDeleteUser(String userEmail) {
+    protected static AdminDeleteUserResponse adminDeleteUser(String userEmail) {
 
         AdminDeleteUserResponse AdminDeleteUserResponse = null;
 

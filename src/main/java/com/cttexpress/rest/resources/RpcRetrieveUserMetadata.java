@@ -3,6 +3,7 @@ package com.cttexpress.rest.resources;
 import com.cttexpress.config.MyAwsBasicCredentials;
 import com.cttexpress.config.MyAwsUserPool;
 import com.cttexpress.rest.exceptions.CustomException;
+import com.cttexpress.rest.representations.RetrieveUserMetadataResponse;
 import org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.validator.constraints.Length;
@@ -32,10 +33,11 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 import java.net.URISyntaxException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Path("/rpc-retrieve-user-metadata")
-@Produces(MediaType.TEXT_PLAIN)
+@Produces(MediaType.APPLICATION_JSON)
 public class RpcRetrieveUserMetadata {
 
 
@@ -63,22 +65,22 @@ public class RpcRetrieveUserMetadata {
         try {
 
             AdminGetUserResponse adminGetUserResponse = adminGetUser(userEmail);
+            RetrieveUserMetadataResponse retrieveUserMetadataResponse = new RetrieveUserMetadataResponse();
 
+            HashMap<String, String> theUserAttributesMap = retrieveUserMetadataResponse.getUser_attributes();
             List<AttributeType> attributeTypeList = adminGetUserResponse.userAttributes();
             for ( AttributeType attributeType : attributeTypeList ) {
-                LOGGER.info("Atributo [" +attributeType.name() + "]-[" + attributeType.value() + "]");
+                theUserAttributesMap.put(attributeType.name(), attributeType.value());
             }
-            LOGGER.info("username [" + adminGetUserResponse.username() +"]");
-            LOGGER.info("userStatusAsString [" + adminGetUserResponse.userStatusAsString() +"]");
-            LOGGER.info("enabled [" + String.valueOf(adminGetUserResponse.enabled()) +"]");
-            LOGGER.info("userCreateDate [" + Date.from(adminGetUserResponse.userCreateDate()).toString() +"]");
-            LOGGER.info("userLastModifiedDate [" + Date.from(adminGetUserResponse.userLastModifiedDate()).toString() +"]");
+            retrieveUserMetadataResponse.setUser_id(adminGetUserResponse.username());
+            retrieveUserMetadataResponse.setUser_status(adminGetUserResponse.userStatusAsString());
+            retrieveUserMetadataResponse.setUser_is_enabled(adminGetUserResponse.enabled());
+            retrieveUserMetadataResponse.setUser_create_date(Date.from(adminGetUserResponse.userCreateDate()));
+            retrieveUserMetadataResponse.setUser_last_modified_date(Date.from(adminGetUserResponse.userLastModifiedDate()));
 
             return Response
                     .status(Status.OK)
-                    .entity(ReflectionToStringBuilder.toString(
-                            adminGetUserResponse,
-                            new MultilineRecursiveToStringStyle()))
+                    .entity(retrieveUserMetadataResponse)
                     .build();
 
         } catch (UserNotFoundException ex) {
@@ -97,7 +99,7 @@ public class RpcRetrieveUserMetadata {
     }
 
 
-    public static AdminGetUserResponse adminGetUser(String userEmail) {
+    protected static AdminGetUserResponse adminGetUser(String userEmail) {
 
         AdminGetUserResponse AdminGetUserResponse = null;
 

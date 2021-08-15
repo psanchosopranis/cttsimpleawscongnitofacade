@@ -13,6 +13,7 @@ public class UpdateUserCustomAttributesRequest {
     protected HashMap<String, String> custom_attributes;
 
     public UpdateUserCustomAttributesRequest() {
+        this.custom_attributes = new HashMap<>();
     }
 
     public UpdateUserCustomAttributesRequest(HashMap<String, String> custom_attributes) {

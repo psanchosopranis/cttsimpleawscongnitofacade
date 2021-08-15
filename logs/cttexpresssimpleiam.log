@@ -1131,3 +1131,131 @@ INFO  [2021-08-15 13:27:08,001] org.eclipse.jetty.server.AbstractConnector: Star
 INFO  [2021-08-15 13:27:08,001] org.eclipse.jetty.server.Server: Started @2676ms
 INFO  [2021-08-15 13:27:14,102] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
 INFO  [2021-08-15 13:27:14,138] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52876].
+INFO  [2021-08-15 14:03:34,065] org.eclipse.jetty.server.AbstractConnector: Stopped application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 14:03:34,081] org.eclipse.jetty.server.AbstractConnector: Stopped admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 14:03:34,110] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6579cdbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 14:03:34,133] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5f8d9767{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-15 16:13:49,407] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-15 16:13:49,410] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-15 16:13:49,410] com.cttexpress.MainApplication: Inicializando Usuarios de Gestión ...
+INFO  [2021-08-15 16:13:50,109] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-15 16:13:50,144] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-15 16:13:50,144] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-15 16:13:50,145] com.cttexpress.MainApplication: Registrando BasicCredentialAuthFilter ...
+INFO  [2021-08-15 16:13:50,176] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-15 16:13:50,339] org.eclipse.jetty.setuid.SetUIDListener: Opened application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:13:50,340] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:13:50,342] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-15 16:13:51,357] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-create-user (com.cttexpress.rest.resources.RpcCreateUser)
+    POST    /rpc-delete-user/{userEmail} (com.cttexpress.rest.resources.RpcDeleteUser)
+    POST    /rpc-disable-user/{userEmail} (com.cttexpress.rest.resources.RpcDisableUser)
+    POST    /rpc-enable-user/{userEmail} (com.cttexpress.rest.resources.RpcEnableUser)
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    POST    /rpc-retrieve-user-metadata/{userEmail} (com.cttexpress.rest.resources.RpcRetrieveUserMetadata)
+    POST    /rpc-update-user-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserAttributes)
+    POST    /rpc-update-user-custom-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes)
+
+INFO  [2021-08-15 16:13:51,358] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5f8d9767{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-15 16:13:51,366] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-15 16:13:51,383] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6579cdbb{/admin,null,AVAILABLE}
+INFO  [2021-08-15 16:13:51,396] org.eclipse.jetty.server.AbstractConnector: Started application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:13:51,402] org.eclipse.jetty.server.AbstractConnector: Started admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:13:51,402] org.eclipse.jetty.server.Server: Started @4357ms
+INFO  [2021-08-15 16:14:21,405] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 16:14:21,444] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[56962].
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [sub]-[29ed5b2c-ceca-4167-9b84-aa54c4193828]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [email_verified]-[true]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [custom:ctt_client_code]-[TECHEDGE-01k]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [name]-[Pablo Sancho-Sopranis Sampol]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [phone_number_verified]-[true]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [phone_number]-[+34650711077]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [custom:ctt_agency_code]-[TECHEDGE-01j]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [email]-[psanchosopranis@gmail.com]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: username [29ed5b2c-ceca-4167-9b84-aa54c4193828]
+INFO  [2021-08-15 16:14:23,991] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userStatusAsString [FORCE_CHANGE_PASSWORD]
+INFO  [2021-08-15 16:14:23,992] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: enabled [false]
+INFO  [2021-08-15 16:14:23,993] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userCreateDate [Sun Aug 15 14:28:44 CEST 2021]
+INFO  [2021-08-15 16:14:23,993] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userLastModifiedDate [Sun Aug 15 14:30:52 CEST 2021]
+INFO  [2021-08-15 16:14:54,863] org.eclipse.jetty.server.AbstractConnector: Stopped application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:14:54,866] org.eclipse.jetty.server.AbstractConnector: Stopped admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:14:54,869] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6579cdbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 16:14:54,890] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5f8d9767{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-15 16:20:56,703] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-15 16:20:56,707] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-15 16:20:56,707] com.cttexpress.MainApplication: Inicializando Usuarios de Gestión ...
+INFO  [2021-08-15 16:20:57,096] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-15 16:20:57,107] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-15 16:20:57,107] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-15 16:20:57,108] com.cttexpress.MainApplication: Registrando BasicCredentialAuthFilter ...
+INFO  [2021-08-15 16:20:57,119] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-15 16:20:57,216] org.eclipse.jetty.setuid.SetUIDListener: Opened application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:20:57,217] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:20:57,219] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-15 16:20:57,761] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-create-user (com.cttexpress.rest.resources.RpcCreateUser)
+    POST    /rpc-delete-user/{userEmail} (com.cttexpress.rest.resources.RpcDeleteUser)
+    POST    /rpc-disable-user/{userEmail} (com.cttexpress.rest.resources.RpcDisableUser)
+    POST    /rpc-enable-user/{userEmail} (com.cttexpress.rest.resources.RpcEnableUser)
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    POST    /rpc-retrieve-user-metadata/{userEmail} (com.cttexpress.rest.resources.RpcRetrieveUserMetadata)
+    POST    /rpc-update-user-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserAttributes)
+    POST    /rpc-update-user-custom-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes)
+
+INFO  [2021-08-15 16:20:57,762] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5f8d9767{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-15 16:20:57,767] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-15 16:20:57,772] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6579cdbb{/admin,null,AVAILABLE}
+INFO  [2021-08-15 16:20:57,780] org.eclipse.jetty.server.AbstractConnector: Started application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:20:57,782] org.eclipse.jetty.server.AbstractConnector: Started admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:20:57,782] org.eclipse.jetty.server.Server: Started @2453ms
+INFO  [2021-08-15 16:21:01,523] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 16:21:01,560] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57000].
+INFO  [2021-08-15 16:21:03,954] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [sub]-[29ed5b2c-ceca-4167-9b84-aa54c4193828]
+INFO  [2021-08-15 16:21:03,954] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [email_verified]-[true]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [custom:ctt_client_code]-[TECHEDGE-01k]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [name]-[Pablo Sancho-Sopranis Sampol]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [phone_number_verified]-[true]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [phone_number]-[+34650711077]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [custom:ctt_agency_code]-[TECHEDGE-01j]
+INFO  [2021-08-15 16:21:03,956] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: Atributo [email]-[psanchosopranis@gmail.com]
+INFO  [2021-08-15 16:21:03,958] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: username [29ed5b2c-ceca-4167-9b84-aa54c4193828]
+INFO  [2021-08-15 16:21:03,958] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userStatusAsString [FORCE_CHANGE_PASSWORD]
+INFO  [2021-08-15 16:21:03,959] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: enabled [false]
+INFO  [2021-08-15 16:21:03,960] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userCreateDate [Sun Aug 15 14:28:44 CEST 2021]
+INFO  [2021-08-15 16:21:03,960] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: userLastModifiedDate [Sun Aug 15 14:30:52 CEST 2021]
+INFO  [2021-08-15 16:24:54,655] org.eclipse.jetty.server.AbstractConnector: Stopped application@c27a3a2{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:24:54,659] org.eclipse.jetty.server.AbstractConnector: Stopped admin@4b200971{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:24:54,666] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6579cdbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 16:24:54,699] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5f8d9767{/awscognitofacade/simple/v1,null,UNAVAILABLE}

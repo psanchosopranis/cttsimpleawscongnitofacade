@@ -78,7 +78,7 @@ public class RpcDisableUser {
     }
 
 
-    public static AdminDisableUserResponse adminDisableUser(String userEmail) {
+    protected static AdminDisableUserResponse adminDisableUser(String userEmail) {
 
         AdminDisableUserResponse AdminDisableUserResponse = null;
 

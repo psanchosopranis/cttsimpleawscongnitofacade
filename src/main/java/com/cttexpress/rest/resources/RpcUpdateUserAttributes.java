@@ -115,7 +115,7 @@ public class RpcUpdateUserAttributes {
         }
     }
 
-    public static AdminUpdateUserAttributesResponse adminUpdateUserAttributes(
+    protected static AdminUpdateUserAttributesResponse adminUpdateUserAttributes(
             String userEmail,
             UpdateUserAttributesRequest updateUserAttributesRequest) {
 

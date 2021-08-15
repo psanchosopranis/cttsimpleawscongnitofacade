@@ -91,7 +91,7 @@ public class RpcForceUserPasswordReset {
     }
 
 
-    public static AdminResetUserPasswordResponse adminResetUserPassword(String userEmail) {
+    protected static AdminResetUserPasswordResponse adminResetUserPassword(String userEmail) {
 
         AdminResetUserPasswordResponse adminResetUserPasswordResponse = null;
 

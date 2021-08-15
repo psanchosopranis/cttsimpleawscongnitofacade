@@ -111,7 +111,7 @@ public class RpcCreateUser {
         }
     }
 
-    public static AdminCreateUserResponse adminCreateUser(CreateUserRequest createUserRequest) {
+    protected static AdminCreateUserResponse adminCreateUser(CreateUserRequest createUserRequest) {
 
         AdminCreateUserResponse AdminCreateUserResponse = null;
 
