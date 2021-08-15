@@ -13,6 +13,7 @@ import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.services.cognitoidentityprovider.CognitoIdentityProviderClient;
 import software.amazon.awssdk.services.cognitoidentityprovider.model.AdminGetUserRequest;
 import software.amazon.awssdk.services.cognitoidentityprovider.model.AdminGetUserResponse;
+import software.amazon.awssdk.services.cognitoidentityprovider.model.AttributeType;
 import software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException;
 
 import javax.annotation.security.RolesAllowed;
@@ -30,6 +31,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 import java.net.URISyntaxException;
+import java.util.Date;
+import java.util.List;
 
 @Path("/rpc-retrieve-user-metadata")
 @Produces(MediaType.TEXT_PLAIN)
@@ -61,8 +64,18 @@ public class RpcRetrieveUserMetadata {
 
             AdminGetUserResponse adminGetUserResponse = adminGetUser(userEmail);
 
+            List<AttributeType> attributeTypeList = adminGetUserResponse.userAttributes();
+            for ( AttributeType attributeType : attributeTypeList ) {
+                LOGGER.info("Atributo [" +attributeType.name() + "]-[" + attributeType.value() + "]");
+            }
+            LOGGER.info("username [" + adminGetUserResponse.username() +"]");
+            LOGGER.info("userStatusAsString [" + adminGetUserResponse.userStatusAsString() +"]");
+            LOGGER.info("enabled [" + String.valueOf(adminGetUserResponse.enabled()) +"]");
+            LOGGER.info("userCreateDate [" + Date.from(adminGetUserResponse.userCreateDate()).toString() +"]");
+            LOGGER.info("userLastModifiedDate [" + Date.from(adminGetUserResponse.userLastModifiedDate()).toString() +"]");
+
             return Response
-                    .status(Status.NO_CONTENT)
+                    .status(Status.OK)
                     .entity(ReflectionToStringBuilder.toString(
                             adminGetUserResponse,
                             new MultilineRecursiveToStringStyle()))
