@@ -3,6 +3,8 @@ package com.cttexpress.rest.resources;
 import com.cttexpress.config.MyAwsBasicCredentials;
 import com.cttexpress.config.MyAwsUserPool;
 import com.cttexpress.rest.exceptions.CustomException;
+import org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.hibernate.validator.constraints.Length;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +32,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URISyntaxException;
 
 @Path("/rpc-retrieve-user-metadata")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.TEXT_PLAIN)
 public class RpcRetrieveUserMetadata {
 
 
@@ -58,9 +60,12 @@ public class RpcRetrieveUserMetadata {
         try {
 
             AdminGetUserResponse adminGetUserResponse = adminGetUser(userEmail);
+
             return Response
                     .status(Status.NO_CONTENT)
-                    .entity(adminGetUserResponse)
+                    .entity(ReflectionToStringBuilder.toString(
+                            adminGetUserResponse,
+                            new MultilineRecursiveToStringStyle()))
                     .build();
 
         } catch (UserNotFoundException ex) {

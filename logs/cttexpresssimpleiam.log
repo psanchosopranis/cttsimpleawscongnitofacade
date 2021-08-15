@@ -884,3 +884,58 @@ com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@7eea0a0[
   custom_attributes={custom:ctt_client_code=TECHEDGE-01k, custom:ctt_agency_code=TECHEDGE-01j}
 ]
 ].
+INFO  [2021-08-15 12:57:01,071] org.eclipse.jetty.server.AbstractConnector: Stopped application@18d910b3{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 12:57:01,075] org.eclipse.jetty.server.AbstractConnector: Stopped admin@1e7ab390{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 12:57:01,081] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@7f79edee{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 12:57:01,092] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@28157173{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-15 12:57:05,378] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-15 12:57:05,380] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-15 12:57:05,380] com.cttexpress.MainApplication: Inicializando Usuarios de Gestión ...
+INFO  [2021-08-15 12:57:05,814] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-15 12:57:05,826] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-15 12:57:05,826] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-15 12:57:05,828] com.cttexpress.MainApplication: Registrando BasicCredentialAuthFilter ...
+INFO  [2021-08-15 12:57:05,838] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-15 12:57:05,938] org.eclipse.jetty.setuid.SetUIDListener: Opened application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 12:57:05,939] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 12:57:05,940] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-15 12:57:06,605] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-create-user (com.cttexpress.rest.resources.RpcCreateUser)
+    POST    /rpc-delete-user/{userEmail} (com.cttexpress.rest.resources.RpcDeleteUser)
+    POST    /rpc-disable-user/{userEmail} (com.cttexpress.rest.resources.RpcDisableUser)
+    POST    /rpc-enable-user/{userEmail} (com.cttexpress.rest.resources.RpcEnableUser)
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    POST    /rpc-retrieve-user-metadata/{userEmail} (com.cttexpress.rest.resources.RpcRetrieveUserMetadata)
+    POST    /rpc-update-user-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserAttributes)
+    POST    /rpc-update-user-custom-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes)
+
+INFO  [2021-08-15 12:57:06,606] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-15 12:57:06,611] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-15 12:57:06,621] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,AVAILABLE}
+INFO  [2021-08-15 12:57:06,635] org.eclipse.jetty.server.AbstractConnector: Started application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 12:57:06,640] org.eclipse.jetty.server.AbstractConnector: Started admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 12:57:06,640] org.eclipse.jetty.server.Server: Started @2757ms
+INFO  [2021-08-15 12:58:02,780] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 12:58:02,798] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52764].
+INFO  [2021-08-15 12:59:11,667] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 12:59:11,670] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52770].
+INFO  [2021-08-15 13:04:28,350] org.eclipse.jetty.server.AbstractConnector: Stopped application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 13:04:28,352] org.eclipse.jetty.server.AbstractConnector: Stopped admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 13:04:28,355] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 13:04:28,365] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,UNAVAILABLE}
