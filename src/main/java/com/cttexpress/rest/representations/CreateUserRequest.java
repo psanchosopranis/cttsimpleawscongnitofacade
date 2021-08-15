@@ -15,22 +15,18 @@ public class CreateUserRequest {
     protected String email;
     @NotBlank @Length(min=5, max=64)
     protected String name;
-    protected boolean email_verified;
     @Length(min=12, max=32)
-    @Pattern(regexp = "^(?:(?:\\+|00)33|0)\\s*[1-9](?:[\\s.-]*\\d{2}){4}$")
+    @Pattern(regexp = "^\\+\\d{11,12}$")
     protected String phone_number;
-    protected boolean phone_number_verified;
     protected HashMap<String, String> custom_attributes;
 
     public CreateUserRequest() {
     }
 
-    public CreateUserRequest(String email, String name, boolean email_verified, String phone_number, boolean phone_number_verified, HashMap<String, String> custom_attributes) {
+    public CreateUserRequest(String email, String name, String phone_number, HashMap<String, String> custom_attributes) {
         this.email = email;
         this.name = name;
-        this.email_verified = email_verified;
         this.phone_number = phone_number;
-        this.phone_number_verified = phone_number_verified;
         this.custom_attributes = custom_attributes;
     }
 
@@ -50,28 +46,12 @@ public class CreateUserRequest {
         this.name = name;
     }
 
-    public boolean isEmail_verified() {
-        return email_verified;
-    }
-
-    public void setEmail_verified(boolean email_verified) {
-        this.email_verified = email_verified;
-    }
-
     public String getPhone_number() {
         return phone_number;
     }
 
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
-    }
-
-    public boolean isPhone_number_verified() {
-        return phone_number_verified;
-    }
-
-    public void setPhone_number_verified(boolean phone_number_verified) {
-        this.phone_number_verified = phone_number_verified;
     }
 
     public HashMap<String, String> getCustom_attributes() {
