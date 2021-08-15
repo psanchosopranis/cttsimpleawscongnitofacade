@@ -688,3 +688,96 @@ INFO  [2021-08-15 11:28:30,829] org.eclipse.jetty.server.AbstractConnector: Stop
 INFO  [2021-08-15 11:28:30,837] org.eclipse.jetty.server.AbstractConnector: Stopped admin@654c7d2d{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
 INFO  [2021-08-15 11:28:30,840] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3e214105{/admin,null,UNAVAILABLE}
 INFO  [2021-08-15 11:28:30,853] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@42507640{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-15 11:34:02,460] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-15 11:34:02,462] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-15 11:34:02,462] com.cttexpress.MainApplication: Inicializando Usuarios de Gestión ...
+INFO  [2021-08-15 11:34:02,857] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-15 11:34:02,865] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-15 11:34:02,865] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-15 11:34:02,867] com.cttexpress.MainApplication: Registrando BasicCredentialAuthFilter ...
+INFO  [2021-08-15 11:34:02,876] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-15 11:34:02,951] org.eclipse.jetty.setuid.SetUIDListener: Opened application@561b61ed{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 11:34:02,951] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@654c7d2d{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 11:34:02,953] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-15 11:34:03,468] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-create-user (com.cttexpress.rest.resources.RpcCreateUser)
+    POST    /rpc-delete-user/{userEmail} (com.cttexpress.rest.resources.RpcDeleteUser)
+    POST    /rpc-disable-user/{userEmail} (com.cttexpress.rest.resources.RpcDisableUser)
+    POST    /rpc-enable-user/{userEmail} (com.cttexpress.rest.resources.RpcEnableUser)
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    POST    /rpc-update-user-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserAttributes)
+
+INFO  [2021-08-15 11:34:03,469] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@42507640{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-15 11:34:03,473] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-15 11:34:03,479] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@3e214105{/admin,null,AVAILABLE}
+INFO  [2021-08-15 11:34:03,487] org.eclipse.jetty.server.AbstractConnector: Started application@561b61ed{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 11:34:03,489] org.eclipse.jetty.server.AbstractConnector: Started admin@654c7d2d{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 11:34:03,489] org.eclipse.jetty.server.Server: Started @2428ms
+INFO  [2021-08-15 11:34:25,699] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:34:25,786] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:34:25,803] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@4bc68d75[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=<null>
+  phone_number=<null>
+]
+].
+INFO  [2021-08-15 11:34:38,582] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:34:38,585] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:34:38,586] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@7ad5d472[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+3465071107
+]
+].
+INFO  [2021-08-15 11:34:50,896] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:34:50,900] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:34:50,900] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@512058c7[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+3465071107a
+]
+].
+INFO  [2021-08-15 11:34:59,162] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:34:59,164] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:34:59,164] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@5219ca3c[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 11:35:09,439] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:35:09,447] com.cttexpress.rest.resources.RpcDeleteUser: POST rpcDeleteUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:35:34,237] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 11:35:34,245] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[52518].
+INFO  [2021-08-15 11:35:34,246] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@4295e5de[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01b, custom:ctt_agency_code=TECHEDGE-01a}
+  email=<null>
+  name=<null>
+  phone_number=<null>
+]
+].
+INFO  [2021-08-15 11:46:23,758] org.eclipse.jetty.server.AbstractConnector: Stopped application@561b61ed{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 11:46:23,760] org.eclipse.jetty.server.AbstractConnector: Stopped admin@654c7d2d{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 11:46:23,769] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3e214105{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 11:46:23,782] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@42507640{/awscognitofacade/simple/v1,null,UNAVAILABLE}

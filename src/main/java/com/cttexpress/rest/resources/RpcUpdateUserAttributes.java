@@ -109,7 +109,7 @@ public class RpcUpdateUserAttributes {
         } catch (Throwable ex) {
             throw new CustomException(
                     Status.INTERNAL_SERVER_ERROR,
-                    "ERR-500-RPC-UPDATE-USER_ATTRIBUTES",
+                    "ERR-500-RPC-UPDATE-USER-ATTRIBUTES",
                     "process-exception-rpc-update-user-attributes",
                     ex);
         }
