@@ -14,15 +14,15 @@ public class RetrieveUserMetadataResponse {
     protected String user_id;
     protected String user_status;
     protected boolean user_is_enabled;
-    protected Date user_create_date;
-    protected Date user_last_modified_date;
+    protected String user_create_date;
+    protected String user_last_modified_date;
     protected HashMap<String, String> user_attributes;
 
     public RetrieveUserMetadataResponse() {
         this.user_attributes = new HashMap<>();
     }
 
-    public RetrieveUserMetadataResponse(String user_id, String user_status, boolean user_is_enabled, Date user_create_date, Date user_last_modified_date, HashMap<String, String> user_attributes) {
+    public RetrieveUserMetadataResponse(String user_id, String user_status, boolean user_is_enabled, String user_create_date, String user_last_modified_date, HashMap<String, String> user_attributes) {
         this.user_id = user_id;
         this.user_status = user_status;
         this.user_is_enabled = user_is_enabled;
@@ -55,19 +55,19 @@ public class RetrieveUserMetadataResponse {
         this.user_is_enabled = user_is_enabled;
     }
 
-    public Date getUser_create_date() {
+    public String getUser_create_date() {
         return user_create_date;
     }
 
-    public void setUser_create_date(Date user_create_date) {
+    public void setUser_create_date(String user_create_date) {
         this.user_create_date = user_create_date;
     }
 
-    public Date getUser_last_modified_date() {
+    public String getUser_last_modified_date() {
         return user_last_modified_date;
     }
 
-    public void setUser_last_modified_date(Date user_last_modified_date) {
+    public void setUser_last_modified_date(String user_last_modified_date) {
         this.user_last_modified_date = user_last_modified_date;
     }
 

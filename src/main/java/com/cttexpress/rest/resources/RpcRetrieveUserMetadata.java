@@ -75,8 +75,8 @@ public class RpcRetrieveUserMetadata {
             retrieveUserMetadataResponse.setUser_id(adminGetUserResponse.username());
             retrieveUserMetadataResponse.setUser_status(adminGetUserResponse.userStatusAsString());
             retrieveUserMetadataResponse.setUser_is_enabled(adminGetUserResponse.enabled());
-            retrieveUserMetadataResponse.setUser_create_date(Date.from(adminGetUserResponse.userCreateDate()));
-            retrieveUserMetadataResponse.setUser_last_modified_date(Date.from(adminGetUserResponse.userLastModifiedDate()));
+            retrieveUserMetadataResponse.setUser_create_date(Date.from(adminGetUserResponse.userCreateDate()).toString());
+            retrieveUserMetadataResponse.setUser_last_modified_date(Date.from(adminGetUserResponse.userLastModifiedDate()).toString());
 
             return Response
                     .status(Status.OK)
