@@ -12,7 +12,7 @@ public class UpdateUserAttributesRequest {
 
     @NotBlank @Length(min=5, max=64)
     protected String name;
-    @Length(min=12, max=32)
+    @NotBlank @Length(min=12, max=13)
     @Pattern(regexp = "^\\+\\d{11,12}$")
     protected String phone_number;
     protected HashMap<String, String> custom_attributes;

@@ -58,6 +58,7 @@ public class MainApplication extends Application<MainConfiguration> {
         environment.jersey().register(new RpcEnableUser(environment.getValidator()));
         environment.jersey().register(new RpcDeleteUser(environment.getValidator()));
         environment.jersey().register(new RpcCreateUser(environment.getValidator()));
+        environment.jersey().register(new RpcUpdateUserAttributes(environment.getValidator()));
 
         LOGGER.info("Registrando recursos de Healthcheck ...");
         //Application health check
