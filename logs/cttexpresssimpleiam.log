@@ -1308,3 +1308,272 @@ INFO  [2021-08-15 16:49:37,440] org.eclipse.jetty.server.AbstractConnector: Stop
 INFO  [2021-08-15 16:49:37,444] org.eclipse.jetty.server.AbstractConnector: Stopped admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
 INFO  [2021-08-15 16:49:37,447] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,UNAVAILABLE}
 INFO  [2021-08-15 16:49:37,466] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,UNAVAILABLE}
+INFO  [2021-08-15 16:52:45,850] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /awscognitofacade/simple/v1
+INFO  [2021-08-15 16:52:45,853] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /admin
+INFO  [2021-08-15 16:52:45,854] com.cttexpress.MainApplication: Inicializando Usuarios de Gestión ...
+INFO  [2021-08-15 16:52:46,264] com.cttexpress.MainApplication: Registrando recursos ...
+INFO  [2021-08-15 16:52:46,274] com.cttexpress.MainApplication: Registrando recursos de Healthcheck ...
+INFO  [2021-08-15 16:52:46,274] com.cttexpress.MainApplication: Registrando  CustomExceptionMapper...
+INFO  [2021-08-15 16:52:46,275] com.cttexpress.MainApplication: Registrando BasicCredentialAuthFilter ...
+INFO  [2021-08-15 16:52:46,284] io.dropwizard.server.ServerFactory: Starting MainApplication
+
+
+        __  __       _                 __                                                      _ __        ____                     __
+  _____/ /_/ /______(_)___ ___  ____  / /__  ____ __      ________________  ____  ____ _____  (_) /_____  / __/___ __________ _____/ /__
+ / ___/ __/ __/ ___/ / __ `__ \/ __ \/ / _ \/ __ `/ | /| / / ___/ ___/ __ \/ __ \/ __ `/ __ \/ / __/ __ \/ /_/ __ `/ ___/ __ `/ __  / _ \
+/ /__/ /_/ /_(__  ) / / / / / / /_/ / /  __/ /_/ /| |/ |/ (__  ) /__/ /_/ / / / / /_/ / / / / / /_/ /_/ / __/ /_/ / /__/ /_/ / /_/ /  __/
+\___/\__/\__/____/_/_/ /_/ /_/ .___/_/\___/\__,_/ |__/|__/____/\___/\____/_/ /_/\__, /_/ /_/_/\__/\____/_/  \__,_/\___/\__,_/\__,_/\___/
+                            /_/                                                /____/
+
+
+
+INFO  [2021-08-15 16:52:46,356] org.eclipse.jetty.setuid.SetUIDListener: Opened application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:52:46,357] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:52:46,358] org.eclipse.jetty.server.Server: jetty-9.4.z-SNAPSHOT; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10
+INFO  [2021-08-15 16:52:47,014] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    POST    /rpc-create-user (com.cttexpress.rest.resources.RpcCreateUser)
+    POST    /rpc-delete-user/{userEmail} (com.cttexpress.rest.resources.RpcDeleteUser)
+    POST    /rpc-disable-user/{userEmail} (com.cttexpress.rest.resources.RpcDisableUser)
+    POST    /rpc-enable-user/{userEmail} (com.cttexpress.rest.resources.RpcEnableUser)
+    POST    /rpc-force-user-password-reset/{userEmail} (com.cttexpress.rest.resources.RpcForceUserPasswordReset)
+    POST    /rpc-retrieve-user-metadata/{userEmail} (com.cttexpress.rest.resources.RpcRetrieveUserMetadata)
+    POST    /rpc-update-user-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserAttributes)
+    POST    /rpc-update-user-custom-attributes/{userEmail} (com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes)
+
+INFO  [2021-08-15 16:52:47,016] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,AVAILABLE}
+INFO  [2021-08-15 16:52:47,023] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2021-08-15 16:52:47,035] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,AVAILABLE}
+INFO  [2021-08-15 16:52:47,043] org.eclipse.jetty.server.AbstractConnector: Started application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 16:52:47,045] org.eclipse.jetty.server.AbstractConnector: Started admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 16:52:47,045] org.eclipse.jetty.server.Server: Started @2578ms
+INFO  [2021-08-15 16:53:06,125] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 16:53:06,142] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57092].
+INFO  [2021-08-15 17:12:52,319] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:12:52,359] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57132].
+INFO  [2021-08-15 17:12:52,367] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@67d6c272[
+  custom_attributes={}
+  email=<null>
+  name=<null>
+  phone_number=<null>
+]
+].
+INFO  [2021-08-15 17:13:25,843] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:13:25,844] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57136].
+INFO  [2021-08-15 17:13:25,845] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@48f154b7[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01b, custom:ctt_agency_code=TECHEDGE-01a}
+  email=psanchosopranis#gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:13:49,667] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:13:49,674] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57136].
+INFO  [2021-08-15 17:13:49,674] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@5d96df62[
+  custom_attributes={custom:ctt_agency_code=TECHEDGE-01a, custom:ctt_client_code1=TECHEDGE-01b}
+  email=psanchosopranis@gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:14:45,938] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:14:45,940] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57142].
+INFO  [2021-08-15 17:14:45,940] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@6371a2dd[
+  custom_attributes={custom:ctt_agency_code=TECHEDGE-01a, custom:ctt_client_code1=TECHEDGE-01b}
+  email=psanchosopranis@gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:15:00,383] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:15:00,384] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57142].
+INFO  [2021-08-15 17:15:00,385] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@6554bb7b[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01b, custom:ctt_agency_code=TECHEDGE-01a}
+  email=psanchosopranis@gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:15:26,309] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:15:26,316] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57142].
+INFO  [2021-08-15 17:15:26,316] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@6a2f5a0[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01b, custom:ctt_agency_code=TECHEDGE-01a}
+  email=psanchosopranis@gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:35:57,268] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:35:57,271] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57296].
+INFO  [2021-08-15 17:36:21,039] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:36:21,040] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57296].
+INFO  [2021-08-15 17:36:43,052] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:37:46,095] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:37:46,097] com.cttexpress.rest.resources.RpcDisableUser: POST rpcDisableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57306].
+INFO  [2021-08-15 17:38:14,318] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:38:29,506] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:38:29,509] com.cttexpress.rest.resources.RpcDisableUser: POST rpcDisableUser [psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57306].
+INFO  [2021-08-15 17:38:43,941] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:38:43,946] com.cttexpress.rest.resources.RpcDisableUser: POST rpcDisableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57306].
+INFO  [2021-08-15 17:39:04,960] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:39:04,960] com.cttexpress.rest.resources.RpcDisableUser: POST rpcDisableUser [psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57306].
+INFO  [2021-08-15 17:39:39,846] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:39:39,846] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57320].
+INFO  [2021-08-15 17:39:54,752] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:39:54,754] com.cttexpress.rest.resources.RpcEnableUser: POST rpcEnableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57320].
+INFO  [2021-08-15 17:40:04,519] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:40:04,520] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57320].
+INFO  [2021-08-15 17:40:12,663] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:40:12,663] com.cttexpress.rest.resources.RpcEnableUser: POST rpcEnableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57320].
+INFO  [2021-08-15 17:40:31,118] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:40:46,442] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:40:46,443] com.cttexpress.rest.resources.RpcEnableUser: POST rpcEnableUser [psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57320].
+INFO  [2021-08-15 17:41:26,757] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:41:26,759] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57336].
+INFO  [2021-08-15 17:41:50,700] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:42:23,413] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:42:23,414] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57342].
+INFO  [2021-08-15 17:42:31,040] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:42:31,041] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57342].
+INFO  [2021-08-15 17:45:27,932] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:45:27,974] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57354].
+INFO  [2021-08-15 17:45:27,976] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@5bbc5ecd[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:45:51,783] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:46:11,589] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:46:11,590] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57354].
+INFO  [2021-08-15 17:46:11,590] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@7c3bb9[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:47:15,911] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:47:15,912] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57364].
+INFO  [2021-08-15 17:47:15,913] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@7eeb3720[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=<null>
+  phone_number=+34650711077rr
+]
+].
+INFO  [2021-08-15 17:47:40,983] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:47:40,995] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57364].
+INFO  [2021-08-15 17:47:40,995] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@27fd0bdc[
+  custom_attributes={custom:ctt_agency_code1=TECHEDGE-01f, custom:ctt_client_code1=TECHEDGE-01g}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:50:35,793] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:50:35,805] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57380].
+INFO  [2021-08-15 17:50:35,805] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@3b936f82[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01k, custom:ctt_agency_code=TECHEDGE-01j}
+]
+].
+INFO  [2021-08-15 17:51:16,458] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:51:16,459] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57386].
+INFO  [2021-08-15 17:51:16,459] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@61f88877[
+  custom_attributes={}
+]
+].
+INFO  [2021-08-15 17:51:35,270] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:51:35,271] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57386].
+INFO  [2021-08-15 17:51:35,273] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@4ae0d881[
+  custom_attributes={custom:ctt_agency_code1=TECHEDGE-01j, custom:ctt_client_code1=TECHEDGE-01k}
+]
+].
+INFO  [2021-08-15 17:52:34,683] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:53:11,204] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:53:52,286] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:53:52,288] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes email[psanchosopranis1@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57404].
+INFO  [2021-08-15 17:53:52,289] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@335e6b98[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01k, custom:ctt_agency_code=TECHEDGE-01j}
+]
+].
+INFO  [2021-08-15 17:55:27,288] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:55:51,877] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:57:14,869] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:57:14,875] com.cttexpress.rest.resources.RpcDeleteUser: POST rpcDeleteUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57416].
+INFO  [2021-08-15 17:57:25,223] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:57:25,226] com.cttexpress.rest.resources.RpcDeleteUser: POST rpcDeleteUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57416].
+INFO  [2021-08-15 17:58:04,948] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:58:46,359] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:58:46,362] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57430].
+INFO  [2021-08-15 17:58:46,362] com.cttexpress.rest.resources.RpcCreateUser: POST rpcCreateUser Payload[
+com.cttexpress.rest.representations.CreateUserRequest@6b582683[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01b, custom:ctt_agency_code=TECHEDGE-01a}
+  email=psanchosopranis@gmail.com
+  name=Pablo Sancho-Sopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 17:59:09,396] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 17:59:09,405] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57430].
+INFO  [2021-08-15 17:59:09,406] com.cttexpress.rest.resources.RpcUpdateUserCustomAttributes: POST rpcUpdateUserCustomAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest@636c4e7[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01k, custom:ctt_agency_code=TECHEDGE-01j}
+]
+].
+INFO  [2021-08-15 18:00:00,213] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:00:00,218] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes email[psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:00:00,218] com.cttexpress.rest.resources.RpcUpdateUserAttributes: POST rpcUpdateUserAttributes Payload[
+com.cttexpress.rest.representations.UpdateUserAttributesRequest@3268dd6e[
+  custom_attributes={custom:ctt_client_code=TECHEDGE-01g, custom:ctt_agency_code=TECHEDGE-01f}
+  name=Pablo SanchoSopranis Sampol
+  phone_number=+34650711077
+]
+].
+INFO  [2021-08-15 18:00:11,414] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:00:11,415] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:00:28,733] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:00:28,734] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:00:58,023] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:00:58,027] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:01:08,681] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:01:08,698] com.cttexpress.rest.resources.RpcEnableUser: POST rpcEnableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:01:14,472] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:01:14,472] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:01:19,483] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:01:19,484] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:01:44,957] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:01:44,958] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57440].
+INFO  [2021-08-15 18:04:45,402] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:04:45,405] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:04:52,665] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:04:52,666] com.cttexpress.rest.resources.RpcForceUserPasswordReset: POST rpcForceUserPasswordReset [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:05:04,991] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:05:04,992] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:05:10,910] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:05:10,912] com.cttexpress.rest.resources.RpcDisableUser: POST rpcDisableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:05:18,126] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:05:18,127] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:05:24,359] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:05:24,360] com.cttexpress.rest.resources.RpcEnableUser: POST rpcEnableUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:05:30,626] com.cttexpress.rest.auth.AppAuthorizer: Autorización otorgada para el usuario[admin1].
+INFO  [2021-08-15 18:05:30,628] com.cttexpress.rest.resources.RpcRetrieveUserMetadata: POST rpcGetUser [psanchosopranis@gmail.com] Remote Host[0:0:0:0:0:0:0:1] Remote Address[0:0:0:0:0:0:0:1] Remote Port[57466].
+INFO  [2021-08-15 18:06:14,430] org.eclipse.jetty.server.AbstractConnector: Stopped application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-15 18:06:14,433] org.eclipse.jetty.server.AbstractConnector: Stopped admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-15 18:06:14,434] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-15 18:06:14,440] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,UNAVAILABLE}

@@ -1,0 +1,2437 @@
+{
+	"info": {
+		"_postman_id": "8d3b7d12-3afb-4289-b6d4-a1167061cfcc",
+		"name": "TestAWSCognito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"item": [
+				{
+					"name": "GET healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{admin-port}}/{{admin-base-path}}/healthcheck",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{admin-port}}",
+							"path": [
+								"{{admin-base-path}}",
+								"healthcheck"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET healthcheck",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{admin-port}}/{{admin-base-path}}/healthcheck",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{admin-port}}",
+									"path": [
+										"{{admin-base-path}}",
+										"healthcheck"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 18:05:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "must-revalidate,no-cache,no-store"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cttsimpleawscognitofacade\": {\n        \"healthy\": true\n    },\n    \"deadlocks\": {\n        \"healthy\": true\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AdminUserTasks",
+			"item": [
+				{
+					"name": "POST /rpc-force-user-password-reset/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-force-user-password-reset",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-force-user-password-reset/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-force-user-password-reset",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:35:57 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-force-user-password-reset/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/psanchosopranis1@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-force-user-password-reset",
+										"psanchosopranis1@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:36:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 23c3d0e2-eb77-4895-a7f1-5a369062eccc, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 23c3d0e2-eb77-4895-a7f1-5a369062eccc, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-force-user-password-reset/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-force-user-password-reset",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:36:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "325"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcForceUserPasswordReset.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-force-user-password-reset/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-force-user-password-reset",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 18:00:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "744"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"ERR-500-RPC-FORCE-USER-PASSWORD_RESET\",\n    \"errorAlias\": \"process-exception-rpc-force-user-password-reset\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException: User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 5de503a4-ddd4-4fc1-a525-a57573cc6f3d, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException[ User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 5de503a4-ddd4-4fc1-a525-a57573cc6f3d, Extended Request ID: null)]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-disable-user/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-disable-user/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-disable-user",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-disable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-disable-user/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-disable-user",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:37:46 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-disable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-disable-user/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-disable-user",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:38:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcDisableUser.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-disable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-disable-user/psanchosopranis1@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-disable-user",
+										"psanchosopranis1@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:39:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cffef452-d43f-4c7c-b2a4-b79819126466, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cffef452-d43f-4c7c-b2a4-b79819126466, Extended Request ID: null)]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-enable-user/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-enable-user/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-enable-user",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-enable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-enable-user/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-enable-user",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:39:54 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-enable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-enable-user/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-enable-user",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:40:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcEnableUser.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-enable-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-enable-user/psanchosopranis1@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-enable-user",
+										"psanchosopranis1@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:40:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 580f6cc0-7046-4ec8-b949-5d52bffb0da0, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 580f6cc0-7046-4ec8-b949-5d52bffb0da0, Extended Request ID: null)]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-delete-user/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-delete-user/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-delete-user",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-delete-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-delete-user/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-delete-user",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:57:14 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-delete-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-delete-user/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-delete-user",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:57:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "675"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 28f3f14c-c2ca-46d2-a764-8c5acd199d50, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 28f3f14c-c2ca-46d2-a764-8c5acd199d50, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-delete-user/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-delete-user/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-delete-user",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:58:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcDeleteUser.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-retrieve-user-metadata/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-retrieve-user-metadata/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-retrieve-user-metadata",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-retrieve-user-metadata/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-retrieve-user-metadata/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-retrieve-user-metadata",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:41:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "517"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user_id\": \"86c46fe6-8fc7-424d-8ad1-6e5460c6c20a\",\n    \"user_status\": \"RESET_REQUIRED\",\n    \"user_is_enabled\": true,\n    \"user_create_date\": \"Sun Aug 15 19:15:00 CEST 2021\",\n    \"user_last_modified_date\": \"Sun Aug 15 19:40:12 CEST 2021\",\n    \"user_attributes\": {\n        \"sub\": \"86c46fe6-8fc7-424d-8ad1-6e5460c6c20a\",\n        \"email_verified\": \"true\",\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"name\": \"Pablo Sancho-Sopranis Sampol\",\n        \"phone_number_verified\": \"true\",\n        \"phone_number\": \"+34650711077\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\",\n        \"email\": \"psanchosopranis@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "POST /rpc-retrieve-user-metadata/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-retrieve-user-metadata/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-retrieve-user-metadata",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:41:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "310"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcGetUser.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-retrieve-user-metadata/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-retrieve-user-metadata/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-retrieve-user-metadata",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:42:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 514f8b1e-bc7a-4d40-ac36-73bb45caa358, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 514f8b1e-bc7a-4d40-ac36-73bb45caa358, Extended Request ID: null)]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-update-user-attributes/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-update-user-attributes",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:45:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:45:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "323"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcUpdateUserAttributes.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis1@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis1@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:46:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: a116e27e-0de4-4cf9-998c-fa0b9131c4f3, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: a116e27e-0de4-4cf9-998c-fa0b9131c4f3, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n    \"phone_number\": \"+34650711077rr\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:47:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"VAL-ERROR-001\",\n    \"errorAlias\": \"data-validation-error\",\n    \"errorMessages\": [\n        \"name: no puede estar vacío\",\n        \"phone_number: la longitud tiene que estar entre 12 y 13\",\n        \"phone_number: tiene que corresponder a la expresión regular \\\"^\\\\+\\\\d{11,12}$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code1\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code1\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:47:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "995"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException: user.custom:ctt_agency_code1: Attribute does not exist in the schema.\\nuser.custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6a7d4300-99be-4d5c-918d-40481d887799, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException[ user.custom:ctt_agency_code1: Attribute does not exist in the schema.\\nuser.custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6a7d4300-99be-4d5c-918d-40481d887799, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"non_existing\": \"any-value\",\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:55:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "622"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"SERVER-THROWABLE-EXCEPTION\",\n    \"errorAlias\": \"excepcion-general-procesamiento\",\n    \"errorMessages\": [\n        \"mensaje:com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException[ Unrecognized field \\\"non_existing\\\" (class com.cttexpress.rest.representations.UpdateUserAttributesRequest), not marked as ignorable (3 known properties: \\\"phone_number\\\", \\\"name\\\", \\\"custom_attributes\\\"])\\n at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 2, column: 26] (through reference chain: com.cttexpress.rest.representations.UpdateUserAttributesRequest[\\\"non_existing\\\"])]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-update-user-custom-attributes",
+								"psanchosopranis@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:50:35 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"custom_attributes\": {\n\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:51:16 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"VAL-ERROR-001\",\n    \"errorAlias\": \"data-validation-error\",\n    \"errorMessages\": [\n        \"custom_attributes: Se ha enviado una colección NULA o VACIA de 'custom_attributes'.\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code1\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code1\": \"TECHEDGE-01j\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:51:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "995"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException: user.custom:ctt_agency_code1: Attribute does not exist in the schema.\\nuser.custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6856ef6d-8442-43a1-be42-097417b7973d, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException[ user.custom:ctt_agency_code1: Attribute does not exist in the schema.\\nuser.custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6856ef6d-8442-43a1-be42-097417b7973d, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"non_existing\": \"any-value\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:52:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "606"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"SERVER-THROWABLE-EXCEPTION\",\n    \"errorAlias\": \"excepcion-general-procesamiento\",\n    \"errorMessages\": [\n        \"mensaje:com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException[ Unrecognized field \\\"non_existing\\\" (class com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest), not marked as ignorable (one known property: \\\"custom_attributes\\\"])\\n at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 2, column: 22] (through reference chain: com.cttexpress.rest.representations.UpdateUserCustomAttributesRequest[\\\"non_existing\\\"])]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis#gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis"
+									],
+									"hash": "gmail.com"
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:53:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"error-validacion-datos-para-operacion\",\n    \"errorMessages\": [\n        \"excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]\",\n        \"rpcUpdateUserCustomAttributes.path param userEmail: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-update-user-custom-attributes/{userEmail}",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/psanchosopranis@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-update-user-custom-attributes",
+										"psanchosopranis@gmail.com"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:53:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-NOT-FOUND\",\n    \"errorAlias\": \"El usuario [psanchosopranis1@gmail.com] no existe en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 157a7205-a828-41de-9cb1-aea27b396d13, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 157a7205-a828-41de-9cb1-aea27b396d13, Extended Request ID: null)]\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST /rpc-create-user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-create-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:12:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "181"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"VAL-ERROR-001\",\n    \"errorAlias\": \"data-validation-error\",\n    \"errorMessages\": [\n        \"name: no puede estar vacío\",\n        \"email: no puede estar vacío\",\n        \"phone_number: no puede estar vacío\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"psanchosopranis#gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:13:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"VAL-ERROR-001\",\n    \"errorAlias\": \"data-validation-error\",\n    \"errorMessages\": [\n        \"email: tiene que corresponder a la expresión regular \\\"^[A-Za-z0-9+_.-]+@(.+)$\\\"\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code1\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:13:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "927"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"BAD-REQUEST\",\n    \"errorAlias\": \"Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException: Attributes did not conform to the schema: custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: d0711689-eb44-4520-b981-1a492a8541d5, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException[ Attributes did not conform to the schema: custom:ctt_client_code1: Attribute does not exist in the schema.\\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: d0711689-eb44-4520-b981-1a492a8541d5, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:15:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"user_internal_id\": \"86c46fe6-8fc7-424d-8ad1-6e5460c6c20a\"\n}"
+						},
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:15:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "773"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"USER-WITH-SAME-EMAIL-ALREADY-EXISTS\",\n    \"errorAlias\": \"Ya existe un usuario con el mismo eMail [psanchosopranis@gmail.com] en el user Pool.\",\n    \"errorMessages\": [\n        \"mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException: An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 44ba4187-f08f-4f28-b761-edcf16e69991, Extended Request ID: null)]\",\n        \"causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException[ An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 44ba4187-f08f-4f28-b761-edcf16e69991, Extended Request ID: null)]\"\n    ]\n}"
+						},
+						{
+							"name": "POST /rpc-create-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \"non_existing\": \"any-value\",\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{api-port}}",
+									"path": [
+										"{{api-base-path}}",
+										"rpc-create-user"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:55:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "613"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorId\": \"SERVER-THROWABLE-EXCEPTION\",\n    \"errorAlias\": \"excepcion-general-procesamiento\",\n    \"errorMessages\": [\n        \"mensaje:com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException[ Unrecognized field \\\"non_existing\\\" (class com.cttexpress.rest.representations.CreateUserRequest), not marked as ignorable (4 known properties: \\\"phone_number\\\", \\\"name\\\", \\\"email\\\", \\\"custom_attributes\\\"])\\n at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 1, column: 23] (through reference chain: com.cttexpress.rest.representations.CreateUserRequest[\\\"non_existing\\\"])]\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AccessTokenTasks",
+			"item": [
+				{
+					"name": "Get User Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiIyNDFlZDQ0My01YjBhLTQxNzQtYmFhZS0xNzYzNTBiZWU3YzYiLCJldmVudF9pZCI6IjA4NDExOTkxLTE5Y2YtNGIxOS05ZWJmLWQ5Mzk0YjdmMmVkMiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MDQ3ODkxLCJleHAiOjE2MjkwNTE0OTEsImlhdCI6MTYyOTA0Nzg5MSwianRpIjoiNWQ4ZWVmYzQtZDQzMC00NDYyLWIzOTYtNDdlNWQwZTY1YjM4IiwidXNlcm5hbWUiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEifQ.myy1xOxebhB5sMuBMYXpqkpkYynnrvD7fS2XDaBjfpTKUAi6o3Zm22S1lFCUzuXon9dzYWlesOJnVWOeSuznb2L-3Ds8ycxhLe2ocKMWtDCvezcUBk3-P5cNQ3TFAEvsYr2kVZhsoOfpW00j9En2SCd0P_VPpbvIWv1tubXMiIMwhn1AXrDE7isQn_Z2lvG7rZLtZ6wUbpmURPSLx2Bh1vFQZEAXzOGy-xR_-wYanOCepDtTWvLL_9beiIzSJ_YeoM4tYpwrQlM8gwjn5ZCrt7-OIICkvf-QyQrG2myBi7N5ieuIWGIs_coNQKRUnlV7DaHzozHeVfdz27HKo2okKA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"userInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Info",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+									"host": [
+										"{{aws-cognito-domain}}"
+									],
+									"path": [
+										"oauth2",
+										"userInfo"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:09:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amz-cognito-request-id",
+									"value": "affabc36-fd69-4dc9-a459-be557c3b6d45"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:prod:8443"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_CATq5rblN, error=INVALID_TOKEN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Server",
+									"value": "Server"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"invalid_token\",\n    \"error_description\": \"Access token is expired or user has globally signed out, disabled or been deleted.\"\n}"
+						},
+						{
+							"name": "Get User Info",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+									"host": [
+										"{{aws-cognito-domain}}"
+									],
+									"path": [
+										"oauth2",
+										"userInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:19:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "335"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amz-cognito-request-id",
+									"value": "673dc2c6-bc75-4929-9bb4-86c466d9d1c3"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:prod:8443"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Server",
+									"value": "Server"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sub\": \"86c46fe6-8fc7-424d-8ad1-6e5460c6c20a\",\n    \"email_verified\": \"true\",\n    \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number_verified\": \"true\",\n    \"phone_number\": \"+34650711077\",\n    \"custom:ctt_agency_code\": \"TECHEDGE-01a\",\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"username\": \"86c46fe6-8fc7-424d-8ad1-6e5460c6c20a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.Re5z5kjnAOjnwV8_gcvLK1USb_TsOfoiFyDx69pxYTADQY9VKfW4ITxOUKdkGhCGXLOJT1EwDx-U_cMJgFfEQz_X4yl6Xvuptd9GmSHwWkbSSgTX-3wVj6TjQjxKPjRg5dxVm9G_A2WkvfuqiEjsFGMavpgRoMrqw8AmoGkEC4Pd_A-ehriZbtbaRG7bN6hJFaqwDumwx7kFM8lZZgiXRraBp2XY-9KMujduvDTXnP6rCZ2q5n47hFp3zWmkaNgqIqUmPDIKCj8Tx2AiybhGto1FcQF1rqvZ9s8h0p8F7yhg7h49CX6mYd_72T_fwqwoD69xmunF7ChnDOWeC_U5BA.LXef281GRfcjNBic.Y8K4oA2IViUhGzuwCYWD-1WAvYhKWIRnIY5BOUl27ZlnTyCPxlb9lE4gqj5QmJK2O5H98pNDUdBWAslny-yzh5UUD97lSdnS9cIW-ReeRX1xQLlxi8rDGVsYv9vtLtcQCLFN5ufWYL4zrN8y3oOzaTKnR-77o2GjxwZ0q7JRFb-uPbA798Yryhpk20OZU7eKfNHYmCGsUZpdoblFH7-g7fTCPPQQGl4p2WMoTC1Uv75OHrJvNOqeGLVBgXiIq9WSU_10uj_EeELrOXZobJv1THWAIwqS55LbcmwG4bo-uOuSrRg1z-LholYuHFGwjY2m9BVyUGJP6zonb-AetEKXF2eC7-F-YU3mnFgdwIm5PqIx4yVToALtJUXlf_RDgVV6E2AUB0uSEpgiGmNaVC7n9vHftDSM8bBAQ2rc7q8DnXHT2TsUulbckyH6xfbVm82NhfZ2zNeFbcN-7fOF-DYcLyAPTl7mQGvkx-r0UyriAwcXIX9sxp0Ac5lGM3TQrot3v-6gEU_GJ8Pbq0gQMc9h2s2UR9BEra1uRfMP9xC1RcssENkyWR1iASu5BKbPKqAEqeAi4WNdWWSlPEBuZk6bJsD9yiIlP0ty_4hqOzkWqyGHHt4zR-5wTtUIDcdrP9BfemftKexv7i7J1vUc2PrlQsXk5-aJTgEX1m8ONWRUqHWMWyS5pLP-_D82mkS4TOOCTNa81cpvjInTS0TmF6sifz_56N1v2wvljHKB4sEQ_c52b-tvEVGbOZP3-dJZbL0wM0R6l7Bp-Q8Xu0YX5HLUWu9tnWbxzKPqQGsfc1C2GbKOWv8Z0RY_JD-jwR0cfCKWY5S1FbO3wZGbS92wKj7idDwtdVktllXD-__p2TzKqUVsYRSm5i23k2jt39_RFyMT2MeATXDoB4wDGEfvtAUTa_D9laUlNyPwVBnZtw0yPDpaOhKRQbmS61QNxQ2VMTwrcJd9_DLjipIiFuk_Gb5PcyGJxn0X3X8KOW3uYOkf_3h_G1lAhKq5-BXbsdFxBLfm6Z48Eywxsuc67-xeRs-i78PDjwcyFmytsv83gBWaFOyWnNdUfuHhkhzajkrhw5fBMKXNSsvIarc3RdkPMyAPXI0GwPNcYMtqZC4LvmFGi-LEJinmCeZVF9ZjIYXwUgUoGE1BwRErQd_V5g2hhUhDiy8KFzw9nKwNrrfuHKl40uOz6Vw4nYcC-8RJ00hK0IiEhPCBTcYoBeKey9n4RSTk3Qk5KQzCwsL6bTnf3Nfjl5zFAV5dqTUutAZGWd8UbSxq5ShI432MNthSZd3oCi8_AzPiXgJCmfDeNPb3fXfYxxRbm6wX7sJYkoq_F9mak3XmhQ3PuYD7YIB7_rgic9y3Rj6wjMJmJdzTpEeKxPaDzWY.inBy2BinixK9prORHooj-w",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/token",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.qCO5waRRJsGWon4NNtpkknm3TiLSITyU9wS5j2Znw0Zjvui2QrTmR4876rG-o8_hfVrEaNt2JXK5xuzwSqbc5gvlnJKyN4Hma4bWl7Ac9AWEEkZ-eDmEFRrtw9raRB6PMb89pLSR6qKAD-O7dXjcvEdbmz2fZrW5wU-eU5Ud3RObTp4yBGn9NXhKqd8iGFVHhpSYP1BsL5eY10TIoQqpLUb_tEn0XJQdJEUFVbIV6zmAbHJHL6CZMVkyZERGND9IW1qoeLDgPAq2GMBHEQSRPnQV_VlKu8uvXdXuROrtdpuzatw6XFI0tVEkGA7oSwXVaHS9HiMrnAT82lSCYPOjeA.hO7kieHdYSL29Rk_.5OoBLdG48pdPEQTbu1HELigtrYSnPCS4manUV-KWWk6ozMdFfE5qBX1pt4ouALQ73oOuc51Asph0PHjiX1T4PR6ItL2jxuAVSPhfI020TUuXEG1KPiQI0qqQ3cw9qJQ3hHLHJR8JGljxPswrlB5KFVcwXVYAMfUjPYqX11QC5F9m7Sx1_W2psTVSCgf2LOE8H7ZI_-1nsDi6nfcnkToAFz-i-fCXg5bYwuDjMeyVn05nwysf9TRMp0iqjLvRX_7LneCaH4YB4aR-RhFmwTFlNRxaQB8MHE1fivuXIEk_yPZQqdgD52_x7Cvk9g0s0BOX6PN-AeWATRzTJkEkbRaRZmk0zfmd-i0wIuHZqQYN0toc9sKGqDgQyTLkWKlWWccewtYNbBpupU-qzY33HIiqCXoTetdI25bFja1KdkphtQpqyDqxb4pNnx7MP02y5VxYJZlrCUA-EvTaAHmKHKUlTb6V3rrjRmooEOx3iNbfVarcbVmnEXrR23oqxdSoYpoc785lY9XNRpmvVOBI4B1YjgDIKWNOvsI_VnFHG1LqcUZ5zy1svaREjYhGf3WvMCq_iuZYrZ-cofwgaA715D8-cPmKoRkA-_ksYPhLVO50xXzjckBJcOnkYwt4e_eg0Vg8QyyJ2LM871OQAOlpgNIprR0W_AAk0FEeHz1ok0X1UJ9tEaCG2EOleCyfomQDe3_P5OIf_ECWs9eCsYLlzEWOn5X0dVwo_qY1BJZWfcqlcxLrz1gSYtCBxwCEB4-vJir1U_z3KLSBGrPxmQhJBz9YzyKe_4wRwROkj1pYattYc3tGTAppgdv9KUc5ELOvrT3Y64PhN_5keTdZRN-1__g2I32U_QpzTzW__iKCpqNWcHXyDa_ModnxHQBHZ9R5if_xh9T6cTGwcEhx6geZcyDGcsY0HMgnC_eFkSFHlI4e2L_95AG32qBUmjNQpWoFj9pXaRifyFKebdDLlzYhMsS1EwcWIfPsvlbsAqgm_fYkohxrt_UX-3kyT0MJfY8WqnwO1A9TOFfIqWq8Yy6syBZvRnMbMnd4Pw_94PbNtQBdUEwf2TI5EC0uBJD23DcG6CjNTrN-arVAuSx_X7oNdh_T8MJ63Oj6-Jah5pzp3bDSITt-xyWre58Osw1Lqlji8y1_e-VdZppheaUwtMTyFyLKVQj4QD3Cbx6H5bMkKuQ-81EZzfOWwM73imhqMKiP-TyzTjQ_B2ZiLkyRt8n4VQRV3eo9iAw-MqnnXKmzRV5DKITNvTHhu4Qem_1tvIn79hlJ2KGgw_KkSkQbeYdaX__t_JYiYwrB0o5dgltjmqk8yZS3Kg5CxbH7-16Ta8Ep1QcbI56Mozk7mAONRkmH7G1DDItNvJHPR1RIGzDMMEOd50k.eRVkvAeM3n0aymysn5RoIQ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{aws-cognito-domain}}/oauth2/token",
+									"host": [
+										"{{aws-cognito-domain}}"
+									],
+									"path": [
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 15 Aug 2021 17:28:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-amz-cognito-request-id",
+									"value": "16cc5f5d-d178-47a6-8c68-115a3194617f"
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:prod:8443"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Server",
+									"value": "Server"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"invalid_client\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
