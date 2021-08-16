@@ -108,3 +108,7 @@ INFO  [2021-08-16 09:23:42,445] org.eclipse.jetty.server.handler.ContextHandler:
 INFO  [2021-08-16 09:23:42,455] org.eclipse.jetty.server.AbstractConnector: Started application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
 INFO  [2021-08-16 09:23:42,464] org.eclipse.jetty.server.AbstractConnector: Started admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
 INFO  [2021-08-16 09:23:42,464] org.eclipse.jetty.server.Server: Started @2579ms
+INFO  [2021-08-16 09:47:13,397] org.eclipse.jetty.server.AbstractConnector: Stopped application@277b8fa4{HTTP/1.1,[http/1.1]}{0.0.0.0:9000}
+INFO  [2021-08-16 09:47:13,434] org.eclipse.jetty.server.AbstractConnector: Stopped admin@6cd64ee8{HTTP/1.1,[http/1.1]}{0.0.0.0:9001}
+INFO  [2021-08-16 09:47:13,437] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@71e7adbb{/admin,null,UNAVAILABLE}
+INFO  [2021-08-16 09:47:13,441] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3a4aadf8{/awscognitofacade/simple/v1,null,UNAVAILABLE}

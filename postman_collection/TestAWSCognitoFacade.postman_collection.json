@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "65d161da-c99a-4843-9cca-ae22022759b0",
+		"name": "TestAWSCognitoFacade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"item": [
+				{
+					"name": "GET healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{admin-port}}/{{admin-base-path}}/healthcheck",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{admin-port}}",
+							"path": [
+								"{{admin-base-path}}",
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminUserTasks",
+			"item": [
+				{
+					"name": "POST /rpc-force-user-password-reset/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-force-user-password-reset/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-force-user-password-reset",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-disable-user/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-disable-user/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-disable-user",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-enable-user/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-enable-user/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-enable-user",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-delete-user/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-delete-user/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-delete-user",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-retrieve-user-metadata/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-retrieve-user-metadata/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-retrieve-user-metadata",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-update-user-attributes/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pablo SanchoSopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01g\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01f\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-attributes/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-update-user-attributes",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-update-user-custom-attributes/{user_email}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01k\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01j\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-update-user-custom-attributes/:{{user_email}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-update-user-custom-attributes",
+								":{{user_email}}"
+							],
+							"variable": [
+								{
+									"key": "{{user_email}}",
+									"value": "psanchosopranis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /rpc-create-user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{admin-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{admin-user}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"email\": \"psanchosopranis@gmail.com\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number\": \"+34650711077\",\n    \"custom_attributes\": {\n        \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n        \"custom:ctt_agency_code\": \"TECHEDGE-01a\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{api-port}}/{{api-base-path}}/rpc-create-user",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{api-port}}",
+							"path": [
+								"{{api-base-path}}",
+								"rpc-create-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccessTokenTasks",
+			"item": [
+				{
+					"name": "Get User Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiIyNDFlZDQ0My01YjBhLTQxNzQtYmFhZS0xNzYzNTBiZWU3YzYiLCJldmVudF9pZCI6IjA4NDExOTkxLTE5Y2YtNGIxOS05ZWJmLWQ5Mzk0YjdmMmVkMiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MDQ3ODkxLCJleHAiOjE2MjkwNTE0OTEsImlhdCI6MTYyOTA0Nzg5MSwianRpIjoiNWQ4ZWVmYzQtZDQzMC00NDYyLWIzOTYtNDdlNWQwZTY1YjM4IiwidXNlcm5hbWUiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEifQ.myy1xOxebhB5sMuBMYXpqkpkYynnrvD7fS2XDaBjfpTKUAi6o3Zm22S1lFCUzuXon9dzYWlesOJnVWOeSuznb2L-3Ds8ycxhLe2ocKMWtDCvezcUBk3-P5cNQ3TFAEvsYr2kVZhsoOfpW00j9En2SCd0P_VPpbvIWv1tubXMiIMwhn1AXrDE7isQn_Z2lvG7rZLtZ6wUbpmURPSLx2Bh1vFQZEAXzOGy-xR_-wYanOCepDtTWvLL_9beiIzSJ_YeoM4tYpwrQlM8gwjn5ZCrt7-OIICkvf-QyQrG2myBi7N5ieuIWGIs_coNQKRUnlV7DaHzozHeVfdz27HKo2okKA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"userInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.lG3X14BgKSip28d3kTtAiFu_zFZ_-nhzy0_JM-TvtQjqCZua7Rf-L4rPjxmOFkSWpxhEICRTt8loqYYR56Uo48NeY3FHmCZ7W-5ouu2DtnHVsf-GE0YdsXwAF2flQ7sdwZntMumJNs3BRMLdQSfKfq4qtrHII2EHMOWDI3myHhDitFagQHuWAWE7P1izDBL5m8Q6LvM_5UZxS_Y733PkkJLz7DHc_hrSaXHgetk-3IJKPl_AnT-owDH1RKwIAz86B7MxHHXnnL_6DDkAShs9-bFCVLXy5fKSnGgq6zgHtT0dmf1FXczVWpGEdM3mqE0dwakDxilU7-8M5o-8pO8QWQ._Rm8aN_AwWYdA8zZ.Z6oPEhsgwDuQzAY0VNmGH2Dw9qyNnj850NihVf02F-aXa4P359SGnjsq5IqXSgNzKcDP8AdzRncOoqYyPvWHWuQUqtk2BYkQBUddP-x_QRqQlRVICr5593WEakebKBAdTFAO1aRQxK_fD6DuSVmaPfTJ2wpdV5Rf3SDkRFhuNoQcqg3eJ-PG4VCUfoHGppfYbv3j11gB19noLDb89biVFEEG0kPXfwZcGV8IfTDpR9cxAp4ueKnO5WPX7ewg4Zsa8XFpaWYCG8wyN51qQo2scfKCWslx5G2sIsoEsi_3e85tKS-guw-qrX-aTCdATOEIHJV2Szkn2CcfLU2oZPDUKTlf3ERkktCRKebaSYE2b8AyHR7i8HCYwu-Xy71qrYqfscmRKx5O2W_DXRVPTwUfMY2N7aU7vxFWebacEnRmrZmnHiWE3JTewM5IVqjxPXE-uBaRccR-pI_oDuMtxCCWE16B20xO_Q5nfyy8Ohf5_NMzvrGR3WNwkfneA7GNm0OMjf0MN66KcDP1k6ofTaVS1fV8dZPTPHTneUKGmMRf2YI5B59f_MJyrCqhlCcSdaV7ZuEDJ2XNauXROmf6M4pwiOuIc2CeTzaskWSGzXxAPVLgRIROxBad7wGNodc_xCrpGSSOjVJ5IgJceU5de-CJsdlrdO1-W5y7tH81hW_BZm_sjOCTCn4bs7w1y19GFmezZtYDHb0enBtDILE8Om20rrQK-I62KoYKNysG5aGEZ19HSVXGDlT7cnC373jiHRH0ocZbBX4VJO7EnaJrsEtHeMnOom_ZelUAPuNePXzOME9TV9Bcd1xwFWg0KJwsPU5083JSQaC9N_r_1Frc2AFxnghAeOCex2FqA6-8cnQCVqCVOgMdICQy_lfgWrQUTCn2COA7O9-VllUdLtbPphvhRdpWy7uH3sVpiSag3trcYwDHDZyj7dgHFvUQ6LvHnt6Jrc9-SJ6vzPCeeeoqwpumYvqrbJ-MFKB-Svyt3DcxsvrxJIIjI-IsEKDnquZKPQ_82vowTbogy8HEfxTnCo5loKcjRGaG8-0lYY4cGzXzoMQ0VIANizJ7YgLF6CZawUOR1gcI-m3pkDnal2l_qWqHtm773Q2HhyPTdIPP-Pl6w5qIjCNSFaA1MjXlExP5H7ji08wr36KSeI8y9Ry8tPeWJp-u9pHOx1Z3INCk0AyqeOHkGbA1p-kWPQBH1P-b1cEhPd3CJY9Xc3b8UMUFNlJl0oQ9pazQH1E2oQ0qDcm2KJc9GVs3C1GfatNNMceuRcgSYcrkPjZQRNxwt2Ht4Tsubw5-MWBPz-f9v2XdGz3xfH7Pksz7Se1YXWZTBj3wFdDMiBXMSift0eXyzoLdAE-a8AUSOIOSYLhr9eXO2XlbcWc.RsPpmsKsFCj-WS9CPB0xJg",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "34r9vgcpnkk667ikfh22pbud30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/token",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user_email",
+			"value": "psanchosopranis@gmail"
+		}
+	]
+}
