@@ -1,0 +1,239 @@
+openapi: 3.0.0
+servers:
+  - url: https://authdev01.cttexpress.local:443
+    description: ''
+info:
+  version: 65d161da-c99a-4843-9cca-ae22022759b0
+  title: TestAWSCognitoFacade
+  description: >-
+    Acceso securizado vía API REST directo a las operaciones expuestas por el API de AWS Cognito  
+    para la gestion administritativa de usuarios.
+    User Pool de Pruebas `uat-client-web-pool` en AWS Cognito en Irlanda (`eu-west-1`)
+paths:
+  /admin/healthcheck:
+    get:
+      summary: Comprobar que la aplicación esta activa (health-check)
+      operationId: GEThealthcheck
+      parameters:
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - HealthCheck
+  /awscognitofacade/simple/v1/rpc-force-user-password-reset/{user_email}:
+    post:
+      security:
+        - basic: []
+      summary: Force User Password Reset (RPC Style)  
+      operationId: POST/rpc-force-user-password-reset/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-disable-user/{user_email}:
+    post:
+      security:
+        - basic: []    
+      summary: Disable User (RPC Style)
+      operationId: POST/rpc-disable-user/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-enable-user/{user_email}:
+    post:
+      security:
+        - basic: []
+      summary: Enable User (RPC Style)
+      operationId: POST/rpc-enable-user/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-delete-user/{user_email}:
+    post:
+      security:
+        - basic: []    
+      summary: Delete User (RPC Style)
+      operationId: POST/rpc-delete-user/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-retrieve-user-metadata/{user_email}:
+    post:
+      security:
+        - basic: []    
+      summary: Retrieve User Metadata (RPC Style)
+      operationId: POST/rpc-retrieve-user-metadata/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-update-user-attributes/{user_email}:
+    post:
+      security:
+        - basic: []    
+      summary: Update User Attributes (RPC Style)
+      operationId: POST/rpc-update-user-attributes/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/Content-Type'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              example:
+                name: Pablo SanchoSopranis Sampol
+                phone_number: '+34650711077'
+                custom_attributes:
+                  custom:ctt_client_code: TECHEDGE-01g
+                  custom:ctt_agency_code: TECHEDGE-01f
+            example: |-
+              {
+                  "name": "Pablo SanchoSopranis Sampol",
+                  "phone_number": "+34650711077",
+                  "custom_attributes": {
+                      "custom:ctt_client_code": "TECHEDGE-01g",
+                      "custom:ctt_agency_code": "TECHEDGE-01f"
+                  }
+              }
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-update-user-custom-attributes/{user_email}:
+    post:
+      security:
+        - basic: []    
+      summary: Update User Custom Attributes only (RPC Style).
+      operationId: POST/rpc-update-user-custom-attributes/{user_email}
+      parameters:
+        - $ref: '#/components/parameters/user_email'
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/Content-Type'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              example:
+                custom_attributes:
+                  custom:ctt_client_code: TECHEDGE-01k
+                  custom:ctt_agency_code: TECHEDGE-01j
+            example: |-
+              {
+                  "custom_attributes": {
+                      "custom:ctt_client_code": "TECHEDGE-01k",
+                      "custom:ctt_agency_code": "TECHEDGE-01j"
+                  }
+              }
+      tags:
+        - AdminUserTasks
+  /awscognitofacade/simple/v1/rpc-create-user:
+    post:
+      security:
+        - basic: []    
+      summary: Create a New User (RPC Style)
+      operationId: POST/rpc-create-user
+      parameters:
+        - $ref: '#/components/parameters/Accept'
+        - $ref: '#/components/parameters/Content-Type'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+              example:
+                email: psanchosopranis@gmail.com
+                name: Pablo Sancho-Sopranis Sampol
+                phone_number: '+34650711077'
+                custom_attributes:
+                  custom:ctt_client_code: TECHEDGE-01b
+                  custom:ctt_agency_code: TECHEDGE-01a
+            example: |-
+              {    
+                  "email": "psanchosopranis@gmail.com",
+                  "name": "Pablo Sancho-Sopranis Sampol",
+                  "phone_number": "+34650711077",
+                  "custom_attributes": {
+                      "custom:ctt_client_code": "TECHEDGE-01b",
+                      "custom:ctt_agency_code": "TECHEDGE-01a"
+                  }
+              }
+      tags:
+        - AdminUserTasks
+components:
+  parameters:
+    Accept:
+      name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/json
+    user_email:
+      name: user_email
+      in: path
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: psanchosopranis@gmail.com
+    Content-Type:
+      name: Content-Type
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/json
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
+
+
