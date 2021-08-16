@@ -1,0 +1,247 @@
+openapi: 3.0.0
+servers:
+  - url: https://ctt-uat-ids.auth.eu-west-1.amazoncognito.com
+    description: 'Dominio de acceso al Pool de Usuarios'
+    variables: {}
+info:
+  version: dc163591-3eac-4b89-bf48-a5265ded8ac3
+  title: TestAwsCognitoDirectAccessTokenTasks
+  description: >-
+    Acceso directo a las operaciones `GetUserInfo` y `Refresh Tokens' disponiendo de los respectivos 
+    Tokens de Acceso (`access-token`) y de refresco (`refresh-token`) 
+    User Pool de Pruebas `uat-client-web-pool` en AWS Cognito en Irlanda (`eu-west-1`)
+paths:
+  /oauth2/userInfo:
+    post:
+      summary: Get User Info
+      operationId: GetUserInfo
+      security:
+      - bearer: []
+      parameters:
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: Get User Info
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/200-GetUserInfo-response'
+              example:
+                sub: e3b75952-bc4e-4cab-bb0b-1b97d378b18d
+                email_verified: 'true'
+                custom:ctt_client_code: TECHEDGE-01b
+                name: Pablo Sancho-Sopranis Sampol
+                phone_number_verified: 'true'
+                phone_number: '+34650711077'
+                custom:ctt_agency_code: TECHEDGE-01a
+                email: psanchosopranis@gmail.com
+                username: e3b75952-bc4e-4cab-bb0b-1b97d378b18d
+        '400':
+          description: Get User Info Bad Request Error
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/401-GetUserInfo-response'
+              examples:
+                example1:
+                  value:
+                    error: invalid_request
+                    error_description: >-
+                      No authorization header set
+        '401':
+          description: Get User Info Not Authorized error
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/401-GetUserInfo-response'
+              examples:
+                example1:
+                  value:
+                    error: invalid_token
+                    error_description: >-
+                      Access token is expired or user has globally signed out,
+                      disabled or been deleted.
+                example2:
+                  value:
+                    error: invalid_token
+                    error_description: >-
+                      Access token is not in correct format
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties: {}
+  /oauth2/token:
+    post:
+      summary: Refresh Token
+      operationId: RefreshToken
+      parameters:
+        - $ref: '#/components/parameters/Content-Type'
+        - $ref: '#/components/parameters/Accept'
+      responses:
+        '200':
+          description: Refresh Token Sucessful Response
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/200-refresh-token-response'
+              example:
+                id_token: >-
+                  eyJraWQiOiI3V1VOeWVcL3o1a2ttXC9nbWp1NVc5MlFoaDBMYWpLNzdWUElwbys5anBZNHc9IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiWEg2dlZsR3cxOV9fT2Z0cEg4Z0N6ZyIsInN1YiI6ImUzYjc1OTUyLWJjNGUtNGNhYi1iYjBiLTFiOTdkMzc4YjE4ZCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsImNvZ25pdG86dXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJjdXN0b206Y3R0X2FnZW5jeV9jb2RlIjoiVEVDSEVER0UtMDFhIiwib3JpZ2luX2p0aSI6IjVlOTNiYzI4LTY2YTUtNDQwMS04YTU4LWI4OGI1MTA2MzY4ZSIsImF1ZCI6IjM0cjl2Z2NwbmtrNjY3aWtmaDIycGJ1ZDMwIiwiZXZlbnRfaWQiOiJhNDc5NmYxMi0yMmI5LTQ2OTctOTM5Mi01NjBlNWJmZjJiMjkiLCJ0b2tlbl91c2UiOiJpZCIsImN1c3RvbTpjdHRfY2xpZW50X2NvZGUiOiJURUNIRURHRS0wMWIiLCJhdXRoX3RpbWUiOjE2MjkxMjAwMTYsIm5hbWUiOiJQYWJsbyBTYW5jaG8tU29wcmFuaXMgU2FtcG9sIiwicGhvbmVfbnVtYmVyIjoiKzM0NjUwNzExMDc3IiwiZXhwIjoxNjI5MTIzODI5LCJpYXQiOjE2MjkxMjAyMzAsImp0aSI6IjJmZjdmMDMwLTJiZmItNDY2Mi05YTg5LTM3ZmYwY2IyNWJhYyIsImVtYWlsIjoicHNhbmNob3NvcHJhbmlzQGdtYWlsLmNvbSJ9.PjWqzpkZ4kI5_3gfmClFEYzqu2s3wyJrGlUtjq541zKg4z4I7322MsS1FwnWopAxNRC2CJe1VyZ5mX4RERxhObuEvZ7DAVREmlJZy3Rzo_ifMyr3DqugvWpC_tbNpdbhfOUwaI7ofWvuziJq-7BiI7LDl4XLDJl3qK2hkP92oJZkjlEv7jzhb_yuTktnnRroXmH8_OKxgojoh59iffMBj5tnd3rPhux2ThHggElvOmFRpsFAiri2N6wVbIEASy3FA3HLaK19-YVqd1pxkWbeb4DQfzY_1Nx6K40_kUpZBTMSsXAR-8PDavJ55wIWUL7x3Xkc0gN0RSES0unh4ItTvg
+                access_token: >-
+                  eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiI1ZTkzYmMyOC02NmE1LTQ0MDEtOGE1OC1iODhiNTEwNjM2OGUiLCJldmVudF9pZCI6ImE0Nzk2ZjEyLTIyYjktNDY5Ny05MzkyLTU2MGU1YmZmMmIyOSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MTIwMDE2LCJleHAiOjE2MjkxMjM4MjksImlhdCI6MTYyOTEyMDIzMCwianRpIjoiOWZhN2I5OTYtNWVkOC00MjJjLTkyMmUtNTU4YmQ1ZjdhMWMwIiwidXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQifQ.H3QkPGkHhz-u9piuS2VKb1knZAs-woQT1MRddNcQkTw9TaT12iyN5-Nsd11TKHll772Q1BrzJymiUP_1evJVsErf4wOiz3loPp3iTAFuQW3ApUUD5rnPlqk7gJ9Q0IuxX60iygR4F7byQQvhC_CZFBAWvoCMnclOkglymeycDCRFVxlRd0L2b1udUnUfI15M9bW8WSGLWnAQE8pU82UH3B6C8kMNYwid52HbXMpIdOMsv7TMgP2NBZeUkRDIrD_rhJcyCg7M7a9ZrylzHEy90vM-WNAdbudLu6a-fTbUsBQX1qWFC1IL2r-WCv57c130H_vnbmOUkvUVQYBLvDryag
+                expires_in: 3600
+                token_type: Bearer
+        '400':
+          description: Refresh Token Bad Request
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/400-refresh-token-response' 
+              examples:
+                sample1:
+                  value:
+                    error: invalid_client
+                sample2:
+                  value:  
+                    error: invalid_grant
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - grant_type
+                - client_id
+                - refresh_token
+              properties:
+                grant_type:
+                  type: string
+                  example: refresh_token
+                client_id:
+                  type: string
+                  example: 34r9vgcpnkk667ikfh22pbud30
+                refresh_token:
+                  type: string
+                  example: >-
+                    eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.Eq8YEsVuuJf7v8g2MptUq0TCCav_yhp3Vs9WfaSYrfVnAYljSK7hRdRAjtbqTNDlFBCb_Wj8RqE3pOAZmrVrfD6rzK9yW3Kv4jDg9lXSDw4HS9SWd5UvdnmWVywViQVFriKrX3tPw95D6mj0IY42JkAOw8nQYp5GfVLI4j0yzrzeNKRIiBgJMWu1ydiKLMc6KHlGFKeGlPeeu48hM9_uI-_iEQHjEH1nKEw2Ts3px8kx-r5xna-UYOze7lFuB1frYHmCSuq0W56S3swmyL38hl2mJkE9vWrMSRU4B09YaGAOYiCrMHd5N7MrmwVMl0PJL96lGx_TL7u4pCn_1kxcfA.xDJjA93G_IfAH1LK.DpHdIhzF4JOEWPbxwvnWDoQfow9if0LiL6AtFL6V1Ll5TS2zI6UKBayBM_cWwvcqxflzCN354fNv5T0eOHklgeTj7YYDcu1IKa1Hbgvwj7iHPKtu1ea74-DluIdhz8j3NpWKRE1B4p9DMHZkRcBtNlGEf_0W7zY6qXKfsSHUs18t3esF0EKUScUCpVz58rCGuLIsfJhmmsLYR4YHfQVsHbBp-0vduqJ0J1szXcO_3dh3Yzrbjxj6AAjYxLVPDZMRMIz4cH-JUP1DeSItYjEsSh4D5cRxZZCkI4sMQQ1al3eSjF93MK13pHk2uYigc4oshuMc7Iqr26AFfxZNffENyfz1mowN7A-GnZnRGM6USwqylj4VIF5xTvm6G0y1EekMAUE2vz4HPh-Q-eIjYQpwki5eSQZg40FptIwuq-CjeGAck2vpXm4ptlGUDhA3I3CqWWM2x025JzipJhkkA5CgmJD92weUF3Y5oHb1el4qG-1sH2kl23OjQJg88Kzumjmc3Ks055h5Mj6sbXDFhYMfDNpG3erJFl4HUCBkmcJz7OYM2K7kjCbP9UUw4jjoYpNB-J5KgnUBaMQ6wql3fggfEZnYpbt3PcrWZ59esYBwLQFMDpKt_0LzpqqYOF0mhKCNALv3spV_b1TisrKXEdT_gEy86fht7B120WiJIkLy306wuds2KJcf5TOmbK2yKykGaWf7XSELS-dmLgRTotSP8WRLsZZkSHVTdNKPmBBtcp0VfLiSzlgUpxWo5RAOTvOJ3lui0Bcuseh17YlZwdnaDtalxE6vnIveOTJoQA_uIYpR2iqHXsxE5hDxe_EuWmbvsgb1ToQ3zj6xqvWbLde-P7C7KL8dZQGeQ7qfXWKFCKY0EIUqfWe2OTO96Hd3j0O0qd_YFimY5ci-vJzvipODUHneAZdoaMV1loBzyAARBBIkHafFBWaew3ly5DJO7RPCDPCWdtGU62gbajBWLLQHth1iJEAAx84Uok61KXTwt-29wCpZv8EgoWqejQS28KweULSFDsMq8Z_Zwf61MVXIdfbJNetZotUz3LGnbwyENvcKMz-So_kJXEpTw3N7kR899uWBpeFPyYINf6j8iTXD0qSL_lpoSfhjOsew_cDF2oli-N2TuL_SKI3d_6Rr3q5TjYxxX4q05s_80_qDLk6dGo3hU16FnLvG7FWjPBeByo2acufqT3xszGtNmbvI1AzvF42JWpQMHeTz-w4CHUzJS3XuMru0Yn8F8B4a0Sl9GJLG50Psl-Muj6g-KHyFiAAwPH8Xx_OcnYRamSa1Yk0sILNBsVYNwO4KFSlqxshPc8nJQXRCKmnKLDZUiyLdnqjxCtSZtzITenFDJusHlfCGpekHiKCL555bPNi4vhsoM78.U5Q4fApyfRRyRG0IbqeqNg
+
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+  parameters:
+    Accept:
+      name: Accept
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/json
+    Content-Type:
+      name: Content-Type
+      in: header
+      required: true
+      style: simple
+      schema:
+        type: string
+        example: application/x-www-form-urlencoded
+  schemas:
+    '200-GetUserInfo-response':
+      type: object
+      properties:
+        sub:
+          type: string
+          description: ''
+          default: e3b75952-bc4e-4cab-bb0b-1b97d378b18d
+        email_verified:
+          type: string
+          description: ''
+          default: 'true'
+        custom:ctt_client_code:
+          type: string
+          description: ''
+          default: TECHEDGE-01b
+        name:
+          type: string
+          description: ''
+          default: Pablo Sancho-Sopranis Sampol
+        phone_number_verified:
+          type: string
+          description: ''
+          default: 'true'
+        phone_number:
+          type: string
+          description: ''
+          default: '+34650711077'
+        custom:ctt_agency_code:
+          type: string
+          description: ''
+          default: TECHEDGE-01a
+        email:
+          type: string
+          description: ''
+          default: psanchosopranis@gmail.com
+        username:
+          type: string
+          description: ''
+          default: e3b75952-bc4e-4cab-bb0b-1b97d378b18d
+    '400-GetUserInfo-response':
+      type: object
+      properties:
+        error:
+          type: string
+          description: ''
+          default: invalid_request
+        error_description:
+          type: string
+          description: ''
+          default: >-
+            No authorization header set.
+    '401-GetUserInfo-response':
+      type: object
+      properties:
+        error:
+          type: string
+          description: ''
+          default: invalid_token
+        error_description:
+          type: string
+          description: ''
+          default: >-
+            Access token is expired or user has globally signed out, disabled or
+            been deleted.
+    '200-refresh-token-response':
+      type: object
+      properties:
+        id_token:
+          type: string
+          description: ''
+          default: >-
+            eyJraWQiOiI3V1VOeWVcL3o1a2ttXC9nbWp1NVc5MlFoaDBMYWpLNzdWUElwbys5anBZNHc9IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiWEg2dlZsR3cxOV9fT2Z0cEg4Z0N6ZyIsInN1YiI6ImUzYjc1OTUyLWJjNGUtNGNhYi1iYjBiLTFiOTdkMzc4YjE4ZCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsImNvZ25pdG86dXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJjdXN0b206Y3R0X2FnZW5jeV9jb2RlIjoiVEVDSEVER0UtMDFhIiwib3JpZ2luX2p0aSI6IjVlOTNiYzI4LTY2YTUtNDQwMS04YTU4LWI4OGI1MTA2MzY4ZSIsImF1ZCI6IjM0cjl2Z2NwbmtrNjY3aWtmaDIycGJ1ZDMwIiwiZXZlbnRfaWQiOiJhNDc5NmYxMi0yMmI5LTQ2OTctOTM5Mi01NjBlNWJmZjJiMjkiLCJ0b2tlbl91c2UiOiJpZCIsImN1c3RvbTpjdHRfY2xpZW50X2NvZGUiOiJURUNIRURHRS0wMWIiLCJhdXRoX3RpbWUiOjE2MjkxMjAwMTYsIm5hbWUiOiJQYWJsbyBTYW5jaG8tU29wcmFuaXMgU2FtcG9sIiwicGhvbmVfbnVtYmVyIjoiKzM0NjUwNzExMDc3IiwiZXhwIjoxNjI5MTIzODI5LCJpYXQiOjE2MjkxMjAyMzAsImp0aSI6IjJmZjdmMDMwLTJiZmItNDY2Mi05YTg5LTM3ZmYwY2IyNWJhYyIsImVtYWlsIjoicHNhbmNob3NvcHJhbmlzQGdtYWlsLmNvbSJ9.PjWqzpkZ4kI5_3gfmClFEYzqu2s3wyJrGlUtjq541zKg4z4I7322MsS1FwnWopAxNRC2CJe1VyZ5mX4RERxhObuEvZ7DAVREmlJZy3Rzo_ifMyr3DqugvWpC_tbNpdbhfOUwaI7ofWvuziJq-7BiI7LDl4XLDJl3qK2hkP92oJZkjlEv7jzhb_yuTktnnRroXmH8_OKxgojoh59iffMBj5tnd3rPhux2ThHggElvOmFRpsFAiri2N6wVbIEASy3FA3HLaK19-YVqd1pxkWbeb4DQfzY_1Nx6K40_kUpZBTMSsXAR-8PDavJ55wIWUL7x3Xkc0gN0RSES0unh4ItTvg
+        access_token:
+          type: string
+          description: ''
+          default: >-
+            eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiI1ZTkzYmMyOC02NmE1LTQ0MDEtOGE1OC1iODhiNTEwNjM2OGUiLCJldmVudF9pZCI6ImE0Nzk2ZjEyLTIyYjktNDY5Ny05MzkyLTU2MGU1YmZmMmIyOSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MTIwMDE2LCJleHAiOjE2MjkxMjM4MjksImlhdCI6MTYyOTEyMDIzMCwianRpIjoiOWZhN2I5OTYtNWVkOC00MjJjLTkyMmUtNTU4YmQ1ZjdhMWMwIiwidXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQifQ.H3QkPGkHhz-u9piuS2VKb1knZAs-woQT1MRddNcQkTw9TaT12iyN5-Nsd11TKHll772Q1BrzJymiUP_1evJVsErf4wOiz3loPp3iTAFuQW3ApUUD5rnPlqk7gJ9Q0IuxX60iygR4F7byQQvhC_CZFBAWvoCMnclOkglymeycDCRFVxlRd0L2b1udUnUfI15M9bW8WSGLWnAQE8pU82UH3B6C8kMNYwid52HbXMpIdOMsv7TMgP2NBZeUkRDIrD_rhJcyCg7M7a9ZrylzHEy90vM-WNAdbudLu6a-fTbUsBQX1qWFC1IL2r-WCv57c130H_vnbmOUkvUVQYBLvDryag
+        expires_in:
+          type: integer
+          description: ''
+          default: 3600
+        token_type:
+          type: string
+          description: ''
+          default: Bearer
+    '400-refresh-token-response':
+      type: object
+      properties:
+        error:
+          type: string
+          description: ''
+          default: invalid_grant

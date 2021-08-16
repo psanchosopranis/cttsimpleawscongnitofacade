@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "727e839a-2300-4fde-8eb2-eed0ca5c0166",
+		"name": "TestAwsCognitoDirectAccessTokenTasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User Info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiIyNDFlZDQ0My01YjBhLTQxNzQtYmFhZS0xNzYzNTBiZWU3YzYiLCJldmVudF9pZCI6IjA4NDExOTkxLTE5Y2YtNGIxOS05ZWJmLWQ5Mzk0YjdmMmVkMiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MDQ3ODkxLCJleHAiOjE2MjkwNTE0OTEsImlhdCI6MTYyOTA0Nzg5MSwianRpIjoiNWQ4ZWVmYzQtZDQzMC00NDYyLWIzOTYtNDdlNWQwZTY1YjM4IiwidXNlcm5hbWUiOiI4NmM0NmZlNi04ZmM3LTQyNGQtOGFkMS02ZTU0NjBjNmMyMGEifQ.myy1xOxebhB5sMuBMYXpqkpkYynnrvD7fS2XDaBjfpTKUAi6o3Zm22S1lFCUzuXon9dzYWlesOJnVWOeSuznb2L-3Ds8ycxhLe2ocKMWtDCvezcUBk3-P5cNQ3TFAEvsYr2kVZhsoOfpW00j9En2SCd0P_VPpbvIWv1tubXMiIMwhn1AXrDE7isQn_Z2lvG7rZLtZ6wUbpmURPSLx2Bh1vFQZEAXzOGy-xR_-wYanOCepDtTWvLL_9beiIzSJ_YeoM4tYpwrQlM8gwjn5ZCrt7-OIICkvf-QyQrG2myBi7N5ieuIWGIs_coNQKRUnlV7DaHzozHeVfdz27HKo2okKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+					"host": [
+						"{{aws-cognito-domain}}"
+					],
+					"path": [
+						"oauth2",
+						"userInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User Info",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"userInfo"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Aug 2021 13:16:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amz-cognito-request-id",
+							"value": "4ab9de01-4c12-4415-9d68-6d1ff3944ffe"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prod:8443"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer realm=https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_CATq5rblN, error=INVALID_TOKEN"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Server",
+							"value": "Server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid_token\",\n    \"error_description\": \"Access token is expired or user has globally signed out, disabled or been deleted.\"\n}"
+				},
+				{
+					"name": "Get User Info",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/userInfo",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"userInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Aug 2021 13:21:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amz-cognito-request-id",
+							"value": "31039383-1ea5-4f41-84b2-8ff8f17c40be"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prod:8443"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Server",
+							"value": "Server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sub\": \"e3b75952-bc4e-4cab-bb0b-1b97d378b18d\",\n    \"email_verified\": \"true\",\n    \"custom:ctt_client_code\": \"TECHEDGE-01b\",\n    \"name\": \"Pablo Sancho-Sopranis Sampol\",\n    \"phone_number_verified\": \"true\",\n    \"phone_number\": \"+34650711077\",\n    \"custom:ctt_agency_code\": \"TECHEDGE-01a\",\n    \"email\": \"psanchosopranis@gmail.com\",\n    \"username\": \"e3b75952-bc4e-4cab-bb0b-1b97d378b18d\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "34r9vgcpnkk667ikfh22pbud30",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.Eq8YEsVuuJf7v8g2MptUq0TCCav_yhp3Vs9WfaSYrfVnAYljSK7hRdRAjtbqTNDlFBCb_Wj8RqE3pOAZmrVrfD6rzK9yW3Kv4jDg9lXSDw4HS9SWd5UvdnmWVywViQVFriKrX3tPw95D6mj0IY42JkAOw8nQYp5GfVLI4j0yzrzeNKRIiBgJMWu1ydiKLMc6KHlGFKeGlPeeu48hM9_uI-_iEQHjEH1nKEw2Ts3px8kx-r5xna-UYOze7lFuB1frYHmCSuq0W56S3swmyL38hl2mJkE9vWrMSRU4B09YaGAOYiCrMHd5N7MrmwVMl0PJL96lGx_TL7u4pCn_1kxcfA.xDJjA93G_IfAH1LK.DpHdIhzF4JOEWPbxwvnWDoQfow9if0LiL6AtFL6V1Ll5TS2zI6UKBayBM_cWwvcqxflzCN354fNv5T0eOHklgeTj7YYDcu1IKa1Hbgvwj7iHPKtu1ea74-DluIdhz8j3NpWKRE1B4p9DMHZkRcBtNlGEf_0W7zY6qXKfsSHUs18t3esF0EKUScUCpVz58rCGuLIsfJhmmsLYR4YHfQVsHbBp-0vduqJ0J1szXcO_3dh3Yzrbjxj6AAjYxLVPDZMRMIz4cH-JUP1DeSItYjEsSh4D5cRxZZCkI4sMQQ1al3eSjF93MK13pHk2uYigc4oshuMc7Iqr26AFfxZNffENyfz1mowN7A-GnZnRGM6USwqylj4VIF5xTvm6G0y1EekMAUE2vz4HPh-Q-eIjYQpwki5eSQZg40FptIwuq-CjeGAck2vpXm4ptlGUDhA3I3CqWWM2x025JzipJhkkA5CgmJD92weUF3Y5oHb1el4qG-1sH2kl23OjQJg88Kzumjmc3Ks055h5Mj6sbXDFhYMfDNpG3erJFl4HUCBkmcJz7OYM2K7kjCbP9UUw4jjoYpNB-J5KgnUBaMQ6wql3fggfEZnYpbt3PcrWZ59esYBwLQFMDpKt_0LzpqqYOF0mhKCNALv3spV_b1TisrKXEdT_gEy86fht7B120WiJIkLy306wuds2KJcf5TOmbK2yKykGaWf7XSELS-dmLgRTotSP8WRLsZZkSHVTdNKPmBBtcp0VfLiSzlgUpxWo5RAOTvOJ3lui0Bcuseh17YlZwdnaDtalxE6vnIveOTJoQA_uIYpR2iqHXsxE5hDxe_EuWmbvsgb1ToQ3zj6xqvWbLde-P7C7KL8dZQGeQ7qfXWKFCKY0EIUqfWe2OTO96Hd3j0O0qd_YFimY5ci-vJzvipODUHneAZdoaMV1loBzyAARBBIkHafFBWaew3ly5DJO7RPCDPCWdtGU62gbajBWLLQHth1iJEAAx84Uok61KXTwt-29wCpZv8EgoWqejQS28KweULSFDsMq8Z_Zwf61MVXIdfbJNetZotUz3LGnbwyENvcKMz-So_kJXEpTw3N7kR899uWBpeFPyYINf6j8iTXD0qSL_lpoSfhjOsew_cDF2oli-N2TuL_SKI3d_6Rr3q5TjYxxX4q05s_80_qDLk6dGo3hU16FnLvG7FWjPBeByo2acufqT3xszGtNmbvI1AzvF42JWpQMHeTz-w4CHUzJS3XuMru0Yn8F8B4a0Sl9GJLG50Psl-Muj6g-KHyFiAAwPH8Xx_OcnYRamSa1Yk0sILNBsVYNwO4KFSlqxshPc8nJQXRCKmnKLDZUiyLdnqjxCtSZtzITenFDJusHlfCGpekHiKCL555bPNi4vhsoM78.U5Q4fApyfRRyRG0IbqeqNg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{aws-cognito-domain}}/oauth2/token",
+					"host": [
+						"{{aws-cognito-domain}}"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Refresh Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.lG3X14BgKSip28d3kTtAiFu_zFZ_-nhzy0_JM-TvtQjqCZua7Rf-L4rPjxmOFkSWpxhEICRTt8loqYYR56Uo48NeY3FHmCZ7W-5ouu2DtnHVsf-GE0YdsXwAF2flQ7sdwZntMumJNs3BRMLdQSfKfq4qtrHII2EHMOWDI3myHhDitFagQHuWAWE7P1izDBL5m8Q6LvM_5UZxS_Y733PkkJLz7DHc_hrSaXHgetk-3IJKPl_AnT-owDH1RKwIAz86B7MxHHXnnL_6DDkAShs9-bFCVLXy5fKSnGgq6zgHtT0dmf1FXczVWpGEdM3mqE0dwakDxilU7-8M5o-8pO8QWQ._Rm8aN_AwWYdA8zZ.Z6oPEhsgwDuQzAY0VNmGH2Dw9qyNnj850NihVf02F-aXa4P359SGnjsq5IqXSgNzKcDP8AdzRncOoqYyPvWHWuQUqtk2BYkQBUddP-x_QRqQlRVICr5593WEakebKBAdTFAO1aRQxK_fD6DuSVmaPfTJ2wpdV5Rf3SDkRFhuNoQcqg3eJ-PG4VCUfoHGppfYbv3j11gB19noLDb89biVFEEG0kPXfwZcGV8IfTDpR9cxAp4ueKnO5WPX7ewg4Zsa8XFpaWYCG8wyN51qQo2scfKCWslx5G2sIsoEsi_3e85tKS-guw-qrX-aTCdATOEIHJV2Szkn2CcfLU2oZPDUKTlf3ERkktCRKebaSYE2b8AyHR7i8HCYwu-Xy71qrYqfscmRKx5O2W_DXRVPTwUfMY2N7aU7vxFWebacEnRmrZmnHiWE3JTewM5IVqjxPXE-uBaRccR-pI_oDuMtxCCWE16B20xO_Q5nfyy8Ohf5_NMzvrGR3WNwkfneA7GNm0OMjf0MN66KcDP1k6ofTaVS1fV8dZPTPHTneUKGmMRf2YI5B59f_MJyrCqhlCcSdaV7ZuEDJ2XNauXROmf6M4pwiOuIc2CeTzaskWSGzXxAPVLgRIROxBad7wGNodc_xCrpGSSOjVJ5IgJceU5de-CJsdlrdO1-W5y7tH81hW_BZm_sjOCTCn4bs7w1y19GFmezZtYDHb0enBtDILE8Om20rrQK-I62KoYKNysG5aGEZ19HSVXGDlT7cnC373jiHRH0ocZbBX4VJO7EnaJrsEtHeMnOom_ZelUAPuNePXzOME9TV9Bcd1xwFWg0KJwsPU5083JSQaC9N_r_1Frc2AFxnghAeOCex2FqA6-8cnQCVqCVOgMdICQy_lfgWrQUTCn2COA7O9-VllUdLtbPphvhRdpWy7uH3sVpiSag3trcYwDHDZyj7dgHFvUQ6LvHnt6Jrc9-SJ6vzPCeeeoqwpumYvqrbJ-MFKB-Svyt3DcxsvrxJIIjI-IsEKDnquZKPQ_82vowTbogy8HEfxTnCo5loKcjRGaG8-0lYY4cGzXzoMQ0VIANizJ7YgLF6CZawUOR1gcI-m3pkDnal2l_qWqHtm773Q2HhyPTdIPP-Pl6w5qIjCNSFaA1MjXlExP5H7ji08wr36KSeI8y9Ry8tPeWJp-u9pHOx1Z3INCk0AyqeOHkGbA1p-kWPQBH1P-b1cEhPd3CJY9Xc3b8UMUFNlJl0oQ9pazQH1E2oQ0qDcm2KJc9GVs3C1GfatNNMceuRcgSYcrkPjZQRNxwt2Ht4Tsubw5-MWBPz-f9v2XdGz3xfH7Pksz7Se1YXWZTBj3wFdDMiBXMSift0eXyzoLdAE-a8AUSOIOSYLhr9eXO2XlbcWc.RsPpmsKsFCj-WS9CPB0xJg",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "34r9vgcpnkk667ikfh22pbud30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/token",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Aug 2021 13:22:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amz-cognito-request-id",
+							"value": "67cb3885-eacc-4772-99b2-5756d2489dfe"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prod:8443"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Server",
+							"value": "Server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid_grant\"\n}"
+				},
+				{
+					"name": "Refresh Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.lG3X14BgKSip28d3kTtAiFu_zFZ_-nhzy0_JM-TvtQjqCZua7Rf-L4rPjxmOFkSWpxhEICRTt8loqYYR56Uo48NeY3FHmCZ7W-5ouu2DtnHVsf-GE0YdsXwAF2flQ7sdwZntMumJNs3BRMLdQSfKfq4qtrHII2EHMOWDI3myHhDitFagQHuWAWE7P1izDBL5m8Q6LvM_5UZxS_Y733PkkJLz7DHc_hrSaXHgetk-3IJKPl_AnT-owDH1RKwIAz86B7MxHHXnnL_6DDkAShs9-bFCVLXy5fKSnGgq6zgHtT0dmf1FXczVWpGEdM3mqE0dwakDxilU7-8M5o-8pO8QWQ._Rm8aN_AwWYdA8zZ.Z6oPEhsgwDuQzAY0VNmGH2Dw9qyNnj850NihVf02F-aXa4P359SGnjsq5IqXSgNzKcDP8AdzRncOoqYyPvWHWuQUqtk2BYkQBUddP-x_QRqQlRVICr5593WEakebKBAdTFAO1aRQxK_fD6DuSVmaPfTJ2wpdV5Rf3SDkRFhuNoQcqg3eJ-PG4VCUfoHGppfYbv3j11gB19noLDb89biVFEEG0kPXfwZcGV8IfTDpR9cxAp4ueKnO5WPX7ewg4Zsa8XFpaWYCG8wyN51qQo2scfKCWslx5G2sIsoEsi_3e85tKS-guw-qrX-aTCdATOEIHJV2Szkn2CcfLU2oZPDUKTlf3ERkktCRKebaSYE2b8AyHR7i8HCYwu-Xy71qrYqfscmRKx5O2W_DXRVPTwUfMY2N7aU7vxFWebacEnRmrZmnHiWE3JTewM5IVqjxPXE-uBaRccR-pI_oDuMtxCCWE16B20xO_Q5nfyy8Ohf5_NMzvrGR3WNwkfneA7GNm0OMjf0MN66KcDP1k6ofTaVS1fV8dZPTPHTneUKGmMRf2YI5B59f_MJyrCqhlCcSdaV7ZuEDJ2XNauXROmf6M4pwiOuIc2CeTzaskWSGzXxAPVLgRIROxBad7wGNodc_xCrpGSSOjVJ5IgJceU5de-CJsdlrdO1-W5y7tH81hW_BZm_sjOCTCn4bs7w1y19GFmezZtYDHb0enBtDILE8Om20rrQK-I62KoYKNysG5aGEZ19HSVXGDlT7cnC373jiHRH0ocZbBX4VJO7EnaJrsEtHeMnOom_ZelUAPuNePXzOME9TV9Bcd1xwFWg0KJwsPU5083JSQaC9N_r_1Frc2AFxnghAeOCex2FqA6-8cnQCVqCVOgMdICQy_lfgWrQUTCn2COA7O9-VllUdLtbPphvhRdpWy7uH3sVpiSag3trcYwDHDZyj7dgHFvUQ6LvHnt6Jrc9-SJ6vzPCeeeoqwpumYvqrbJ-MFKB-Svyt3DcxsvrxJIIjI-IsEKDnquZKPQ_82vowTbogy8HEfxTnCo5loKcjRGaG8-0lYY4cGzXzoMQ0VIANizJ7YgLF6CZawUOR1gcI-m3pkDnal2l_qWqHtm773Q2HhyPTdIPP-Pl6w5qIjCNSFaA1MjXlExP5H7ji08wr36KSeI8y9Ry8tPeWJp-u9pHOx1Z3INCk0AyqeOHkGbA1p-kWPQBH1P-b1cEhPd3CJY9Xc3b8UMUFNlJl0oQ9pazQH1E2oQ0qDcm2KJc9GVs3C1GfatNNMceuRcgSYcrkPjZQRNxwt2Ht4Tsubw5-MWBPz-f9v2XdGz3xfH7Pksz7Se1YXWZTBj3wFdDMiBXMSift0eXyzoLdAE-a8AUSOIOSYLhr9eXO2XlbcWc.RsPpmsKsFCj-WS9CPB0xJg",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "34r9vgcpnkk667ikfh22pbud30x",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/token",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Aug 2021 13:22:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amz-cognito-request-id",
+							"value": "809109f7-7ff3-497b-9947-4a61cc9bc8ca"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prod:8443"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Server",
+							"value": "Server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid_client\"\n}"
+				},
+				{
+					"name": "Refresh Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "34r9vgcpnkk667ikfh22pbud30",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.Eq8YEsVuuJf7v8g2MptUq0TCCav_yhp3Vs9WfaSYrfVnAYljSK7hRdRAjtbqTNDlFBCb_Wj8RqE3pOAZmrVrfD6rzK9yW3Kv4jDg9lXSDw4HS9SWd5UvdnmWVywViQVFriKrX3tPw95D6mj0IY42JkAOw8nQYp5GfVLI4j0yzrzeNKRIiBgJMWu1ydiKLMc6KHlGFKeGlPeeu48hM9_uI-_iEQHjEH1nKEw2Ts3px8kx-r5xna-UYOze7lFuB1frYHmCSuq0W56S3swmyL38hl2mJkE9vWrMSRU4B09YaGAOYiCrMHd5N7MrmwVMl0PJL96lGx_TL7u4pCn_1kxcfA.xDJjA93G_IfAH1LK.DpHdIhzF4JOEWPbxwvnWDoQfow9if0LiL6AtFL6V1Ll5TS2zI6UKBayBM_cWwvcqxflzCN354fNv5T0eOHklgeTj7YYDcu1IKa1Hbgvwj7iHPKtu1ea74-DluIdhz8j3NpWKRE1B4p9DMHZkRcBtNlGEf_0W7zY6qXKfsSHUs18t3esF0EKUScUCpVz58rCGuLIsfJhmmsLYR4YHfQVsHbBp-0vduqJ0J1szXcO_3dh3Yzrbjxj6AAjYxLVPDZMRMIz4cH-JUP1DeSItYjEsSh4D5cRxZZCkI4sMQQ1al3eSjF93MK13pHk2uYigc4oshuMc7Iqr26AFfxZNffENyfz1mowN7A-GnZnRGM6USwqylj4VIF5xTvm6G0y1EekMAUE2vz4HPh-Q-eIjYQpwki5eSQZg40FptIwuq-CjeGAck2vpXm4ptlGUDhA3I3CqWWM2x025JzipJhkkA5CgmJD92weUF3Y5oHb1el4qG-1sH2kl23OjQJg88Kzumjmc3Ks055h5Mj6sbXDFhYMfDNpG3erJFl4HUCBkmcJz7OYM2K7kjCbP9UUw4jjoYpNB-J5KgnUBaMQ6wql3fggfEZnYpbt3PcrWZ59esYBwLQFMDpKt_0LzpqqYOF0mhKCNALv3spV_b1TisrKXEdT_gEy86fht7B120WiJIkLy306wuds2KJcf5TOmbK2yKykGaWf7XSELS-dmLgRTotSP8WRLsZZkSHVTdNKPmBBtcp0VfLiSzlgUpxWo5RAOTvOJ3lui0Bcuseh17YlZwdnaDtalxE6vnIveOTJoQA_uIYpR2iqHXsxE5hDxe_EuWmbvsgb1ToQ3zj6xqvWbLde-P7C7KL8dZQGeQ7qfXWKFCKY0EIUqfWe2OTO96Hd3j0O0qd_YFimY5ci-vJzvipODUHneAZdoaMV1loBzyAARBBIkHafFBWaew3ly5DJO7RPCDPCWdtGU62gbajBWLLQHth1iJEAAx84Uok61KXTwt-29wCpZv8EgoWqejQS28KweULSFDsMq8Z_Zwf61MVXIdfbJNetZotUz3LGnbwyENvcKMz-So_kJXEpTw3N7kR899uWBpeFPyYINf6j8iTXD0qSL_lpoSfhjOsew_cDF2oli-N2TuL_SKI3d_6Rr3q5TjYxxX4q05s_80_qDLk6dGo3hU16FnLvG7FWjPBeByo2acufqT3xszGtNmbvI1AzvF42JWpQMHeTz-w4CHUzJS3XuMru0Yn8F8B4a0Sl9GJLG50Psl-Muj6g-KHyFiAAwPH8Xx_OcnYRamSa1Yk0sILNBsVYNwO4KFSlqxshPc8nJQXRCKmnKLDZUiyLdnqjxCtSZtzITenFDJusHlfCGpekHiKCL555bPNi4vhsoM78.U5Q4fApyfRRyRG0IbqeqNg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{aws-cognito-domain}}/oauth2/token",
+							"host": [
+								"{{aws-cognito-domain}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 16 Aug 2021 13:23:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amz-cognito-request-id",
+							"value": "1e825133-5a16-4cfa-aee6-edd367046908"
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prod:8443"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Server",
+							"value": "Server"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_token\": \"eyJraWQiOiI3V1VOeWVcL3o1a2ttXC9nbWp1NVc5MlFoaDBMYWpLNzdWUElwbys5anBZNHc9IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiWEg2dlZsR3cxOV9fT2Z0cEg4Z0N6ZyIsInN1YiI6ImUzYjc1OTUyLWJjNGUtNGNhYi1iYjBiLTFiOTdkMzc4YjE4ZCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsImNvZ25pdG86dXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJjdXN0b206Y3R0X2FnZW5jeV9jb2RlIjoiVEVDSEVER0UtMDFhIiwib3JpZ2luX2p0aSI6IjVlOTNiYzI4LTY2YTUtNDQwMS04YTU4LWI4OGI1MTA2MzY4ZSIsImF1ZCI6IjM0cjl2Z2NwbmtrNjY3aWtmaDIycGJ1ZDMwIiwiZXZlbnRfaWQiOiJhNDc5NmYxMi0yMmI5LTQ2OTctOTM5Mi01NjBlNWJmZjJiMjkiLCJ0b2tlbl91c2UiOiJpZCIsImN1c3RvbTpjdHRfY2xpZW50X2NvZGUiOiJURUNIRURHRS0wMWIiLCJhdXRoX3RpbWUiOjE2MjkxMjAwMTYsIm5hbWUiOiJQYWJsbyBTYW5jaG8tU29wcmFuaXMgU2FtcG9sIiwicGhvbmVfbnVtYmVyIjoiKzM0NjUwNzExMDc3IiwiZXhwIjoxNjI5MTIzODI5LCJpYXQiOjE2MjkxMjAyMzAsImp0aSI6IjJmZjdmMDMwLTJiZmItNDY2Mi05YTg5LTM3ZmYwY2IyNWJhYyIsImVtYWlsIjoicHNhbmNob3NvcHJhbmlzQGdtYWlsLmNvbSJ9.PjWqzpkZ4kI5_3gfmClFEYzqu2s3wyJrGlUtjq541zKg4z4I7322MsS1FwnWopAxNRC2CJe1VyZ5mX4RERxhObuEvZ7DAVREmlJZy3Rzo_ifMyr3DqugvWpC_tbNpdbhfOUwaI7ofWvuziJq-7BiI7LDl4XLDJl3qK2hkP92oJZkjlEv7jzhb_yuTktnnRroXmH8_OKxgojoh59iffMBj5tnd3rPhux2ThHggElvOmFRpsFAiri2N6wVbIEASy3FA3HLaK19-YVqd1pxkWbeb4DQfzY_1Nx6K40_kUpZBTMSsXAR-8PDavJ55wIWUL7x3Xkc0gN0RSES0unh4ItTvg\",\n    \"access_token\": \"eyJraWQiOiI4TjNqVjE2bTBCWjJoYUk5Mk9rR2pzT2ZPanBOZmlLM3kwYWhUQU11alVFPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9DQVRxNXJibE4iLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzNHI5dmdjcG5razY2N2lrZmgyMnBidWQzMCIsIm9yaWdpbl9qdGkiOiI1ZTkzYmMyOC02NmE1LTQ0MDEtOGE1OC1iODhiNTEwNjM2OGUiLCJldmVudF9pZCI6ImE0Nzk2ZjEyLTIyYjktNDY5Ny05MzkyLTU2MGU1YmZmMmIyOSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoib3BlbmlkIGNvbW1vblwvdWF0IGN0dC1lLWNsaWVudC13ZWJcL2xvY2FsIiwiYXV0aF90aW1lIjoxNjI5MTIwMDE2LCJleHAiOjE2MjkxMjM4MjksImlhdCI6MTYyOTEyMDIzMCwianRpIjoiOWZhN2I5OTYtNWVkOC00MjJjLTkyMmUtNTU4YmQ1ZjdhMWMwIiwidXNlcm5hbWUiOiJlM2I3NTk1Mi1iYzRlLTRjYWItYmIwYi0xYjk3ZDM3OGIxOGQifQ.H3QkPGkHhz-u9piuS2VKb1knZAs-woQT1MRddNcQkTw9TaT12iyN5-Nsd11TKHll772Q1BrzJymiUP_1evJVsErf4wOiz3loPp3iTAFuQW3ApUUD5rnPlqk7gJ9Q0IuxX60iygR4F7byQQvhC_CZFBAWvoCMnclOkglymeycDCRFVxlRd0L2b1udUnUfI15M9bW8WSGLWnAQE8pU82UH3B6C8kMNYwid52HbXMpIdOMsv7TMgP2NBZeUkRDIrD_rhJcyCg7M7a9ZrylzHEy90vM-WNAdbudLu6a-fTbUsBQX1qWFC1IL2r-WCv57c130H_vnbmOUkvUVQYBLvDryag\",\n    \"expires_in\": 3600,\n    \"token_type\": \"Bearer\"\n}"
+				}
+			]
+		}
+	]
+}
