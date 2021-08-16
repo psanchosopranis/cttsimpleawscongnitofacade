@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "8d3b7d12-3afb-4289-b6d4-a1167061cfcc",
-		"name": "TestAWSCognito",
+		"name": "TestAWSCognitoFacadeAndDirectAccessTokenTasks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
