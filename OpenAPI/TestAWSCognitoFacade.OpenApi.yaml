@@ -18,8 +18,16 @@ paths:
         - $ref: '#/components/parameters/Accept'
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: HealthCheck Sucessful Response
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/200-HealthCheck-response'
+              example:
+                cttsimpleawscognitofacade:
+                  healthy: true
+                deadlocks:
+                  healthy: true
       tags:
         - HealthCheck
   /awscognitofacade/simple/v1/rpc-force-user-password-reset/{user_email}:
@@ -32,9 +40,8 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-disable-user/{user_email}:
@@ -47,9 +54,8 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-enable-user/{user_email}:
@@ -77,9 +83,8 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-retrieve-user-metadata/{user_email}:
@@ -92,9 +97,8 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-update-user-attributes/{user_email}:
@@ -108,30 +112,40 @@ paths:
         - $ref: '#/components/parameters/Accept'
         - $ref: '#/components/parameters/Content-Type'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: string
-              example:
-                name: Pablo SanchoSopranis Sampol
-                phone_number: '+34650711077'
+              type: object
+              required:
+                - name
+                - phone_number
+              properties:
+                name:
+                  description: 'Nombre y Apellidos del Usuario'
+                  type: string
+                  minLength: 5
+                  maxLength: 64
+                  example: Pablo SanchoSopranis Sampol
+                phone_number:
+                  description: 'Teléfono del Usuario'
+                  type: string
+                  minLength: 12
+                  maxLength: 13
+                  pattern: '^\\+\\d{11,12}$'
+                  example: '+34666777888'
                 custom_attributes:
-                  custom:ctt_client_code: TECHEDGE-01g
-                  custom:ctt_agency_code: TECHEDGE-01f
-            example: |-
-              {
-                  "name": "Pablo SanchoSopranis Sampol",
-                  "phone_number": "+34650711077",
-                  "custom_attributes": {
-                      "custom:ctt_client_code": "TECHEDGE-01g",
-                      "custom:ctt_agency_code": "TECHEDGE-01f"
-                  }
-              }
+                  type: object
+                  properties:
+                    custom:ctt_client_code:
+                      type: string
+                      example: 'TECHEDGE-01a'
+                    custom:ctt_agency_code:
+                      type: string
+                      example: 'TECHEDGE-01b'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-update-user-custom-attributes/{user_email}:
@@ -145,26 +159,26 @@ paths:
         - $ref: '#/components/parameters/Accept'
         - $ref: '#/components/parameters/Content-Type'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: string
-              example:
+              type: object
+              required:
+                - custom_attributes
+              properties:
                 custom_attributes:
-                  custom:ctt_client_code: TECHEDGE-01k
-                  custom:ctt_agency_code: TECHEDGE-01j
-            example: |-
-              {
-                  "custom_attributes": {
-                      "custom:ctt_client_code": "TECHEDGE-01k",
-                      "custom:ctt_agency_code": "TECHEDGE-01j"
-                  }
-              }
+                  type: object
+                  properties:
+                    custom:ctt_client_code:
+                      type: string
+                      example: 'TECHEDGE-01a'
+                    custom:ctt_agency_code:
+                      type: string
+                      example: 'TECHEDGE-01b'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-create-user:
@@ -177,32 +191,46 @@ paths:
         - $ref: '#/components/parameters/Accept'
         - $ref: '#/components/parameters/Content-Type'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: string
-              example:
-                email: psanchosopranis@gmail.com
-                name: Pablo Sancho-Sopranis Sampol
-                phone_number: '+34650711077'
+              type: object
+              required:
+                - email
+                - name
+                - phone_number
+              properties:
+                email:
+                  type: string
+                  pattern: '^\\+\\d{11,12}$'
+                  description: 'eMail del Usuario (debe ser un eMail válido)'
+                  example: psanchosopranis@gmail.com
+                name:
+                  description: 'Nombre y Apellidos del Usuario'
+                  type: string
+                  minLength: 5
+                  maxLength: 64
+                  example: Pablo SanchoSopranis Sampol
+                phone_number:
+                  description: 'Teléfono del Usuario'
+                  type: string
+                  minLength: 12
+                  maxLength: 13
+                  pattern: '^\\+\\d{11,12}$'
+                  example: '+34666777888'
                 custom_attributes:
-                  custom:ctt_client_code: TECHEDGE-01b
-                  custom:ctt_agency_code: TECHEDGE-01a
-            example: |-
-              {    
-                  "email": "psanchosopranis@gmail.com",
-                  "name": "Pablo Sancho-Sopranis Sampol",
-                  "phone_number": "+34650711077",
-                  "custom_attributes": {
-                      "custom:ctt_client_code": "TECHEDGE-01b",
-                      "custom:ctt_agency_code": "TECHEDGE-01a"
-                  }
-              }
+                  type: object
+                  properties:
+                    custom:ctt_client_code:
+                      type: string
+                      example: 'TECHEDGE-01a'
+                    custom:ctt_agency_code:
+                      type: string
+                      example: 'TECHEDGE-01b'
       tags:
         - AdminUserTasks
 components:
@@ -222,6 +250,8 @@ components:
       style: simple
       schema:
         type: string
+        pattern: '^\\+\\d{11,12}$'
+        description: 'eMail del Usuario (debe ser un eMail válido)'
         example: psanchosopranis@gmail.com
     Content-Type:
       name: Content-Type
@@ -231,6 +261,22 @@ components:
       schema:
         type: string
         example: application/json
+  schemas:
+    '200-HealthCheck-response':
+      type: object
+      properties:
+        cttsimpleawscognitofacade:
+          type: object
+          description: 'App Status'
+          properties:
+            healthy:
+              type: boolean
+        deadlocks:
+          type: object
+          description: 'Deadlocks Status'
+          properties:
+            healthy:
+              type: boolean
   securitySchemes:
     basic:
       type: http
