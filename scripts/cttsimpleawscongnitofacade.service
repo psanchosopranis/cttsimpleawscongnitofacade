@@ -1,27 +1,28 @@
 [Unit]
-Description=CTT Express Simple JWT/IAM Server
+Description=CTT Express Temporary AWS Cognito API interface
 # Notas:
 # 1) Recordar ejecutar "sudo systemctl daemon-reload"
 #    para activar modificaciones a este archivo
 # 2) Ubicación de este "Systemd Unit":
 #    Centos: /usr/lib/systemd/system/
 #    Ubuntu: /lib/systemd/system/
+# 3) Origen: https://github.com/psanchosopranis/cttsimpleawscongnitofacade.git
 [Service]
 TimeoutStartSec=5min
 Type=simple
 User=administrador
 Group=administrador
-WorkingDirectory=/home/administrador/cttexpresssimpleiam
-Environment="CTTEXPRESSSIMPLEIAM_HOME=/home/administrador/cttexpresssimpleiam"
-Environment="LOGS_HOME=/home/administrador/cttexpresssimpleiam/logs"
+WorkingDirectory=/home/administrador/cttsimpleawscongnitofacade
+Environment="cttsimpleawscongnitofacade_HOME=/home/administrador/cttsimpleawscongnitofacade"
+Environment="LOGS_HOME=/home/administrador/cttsimpleawscongnitofacade/logs"
 
-ExecStart=/usr/bin/java -jar /home/administrador/cttexpresssimpleiam/binaries/simpleiamserver-1.0.0.jar server /home/administrador/cttexpresssimpleiam/main-configuration.yml
+ExecStart=/usr/bin/java -jar /home/administrador/cttsimpleawscongnitofacade/binaries/cttsimpleawscongnitofacade-1.0.0.jar server /home/administrador/cttsimpleawscongnitofacade/main-configuration.yml
 ExecStop=/bin/kill -SIGTERM $MAINPID
 
 SuccessExitStatus=143
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=cttexpresssimpleiam
+SyslogIdentifier=cttsimpleawscongnitofacade
 LimitNOFILE=500000
 LimitNPROC=500000
 
