@@ -42,6 +42,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-disable-user/{user_email}:
@@ -56,6 +65,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-enable-user/{user_email}:
@@ -68,9 +86,17 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '200':
-          description: ''
-          headers: {}
+        '204':
+          description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-delete-user/{user_email}:
@@ -85,6 +111,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-retrieve-user-metadata/{user_email}:
@@ -97,8 +132,21 @@ paths:
         - $ref: '#/components/parameters/user_email'
         - $ref: '#/components/parameters/Accept'
       responses:
-        '204':
-          description: 'The operation requested was successful (NO Body Content is returned)'
+        '200':
+          description: 'Metadatos del usuario'
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/200-Retrieve-User-Metadata-response' 
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-update-user-attributes/{user_email}:
@@ -114,6 +162,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01' 
       requestBody:
         required: true
         content:
@@ -161,6 +218,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       requestBody:
         required: true
         content:
@@ -193,6 +259,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '401':
+          description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample401-01'
       requestBody:
         required: true
         content:
@@ -277,6 +352,73 @@ components:
           properties:
             healthy:
               type: boolean
+    '200-Retrieve-User-Metadata-response':
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: 'e3b75952-bc4e-4cab-bb0b-1b97d378b18d'
+        user_status:
+          type: string
+          example: 'CONFIRMED'
+        user_is_enabled:
+          type: boolean
+          example: true,
+        user_create_date:
+          type: string
+          example: 'Mon Aug 16 15:18:07 CEST 2021'
+        user_last_modified_date:
+          type: string
+          example: 'Mon Aug 16 17:57:57 CEST 2021'
+        user_attributes: 
+          type: object
+          properties:
+            sub:
+              type: string
+              example: 'e3b75952-bc4e-4cab-bb0b-1b97d378b18d'
+            email:
+              type: string
+              example: 'psanchosopranis@gmail.com'
+            email_verified:
+              type: boolean
+              example: true
+            name:
+              type: string
+              example: 'Pablo Sancho-Sopranis Sampol'
+            phone_number_verified:
+              type: boolean
+              example: true
+            phone_number:
+              type: string
+              example: '+34650711077'
+            custom:ctt_agency_code:
+              type: string
+              example: 'TECHEDGE-01a'
+            custom:ctt_client_code:
+              type: string
+              example: 'TECHEDGE-01b'          
+    'common-error-response':
+      type: object
+      properties:
+        errorId:
+          type: string
+          description: 'Identificador del Error'
+        errorAlias:
+          type: string
+          description: 'Identificador (alias) del Error'
+        errorMessages:
+          type: array 
+          description: 'Lineas con información adicionales de la(s) condicion(es) de error.'
+          items:
+            type: string
+  examples:
+    sample401-01:
+      summary: 'ERR-401-UNAUTHORIZED'
+      value:
+        errorId: 'ERR-401-UNAUTHORIZED'
+        errorAlias": 'invalid-or-missing-credentials'
+        errorMessages": 
+        - 'Se requieren credenciales válidas (y activas) para acceder a este recurso.'
   securitySchemes:
     basic:
       type: http
