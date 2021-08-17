@@ -76,9 +76,9 @@ public class RpcForceUserPasswordReset {
                         ex);
             } else {
                 throw new CustomException(
-                        Status.INTERNAL_SERVER_ERROR,
-                        "ERR-500-RPC-FORCE-USER-PASSWORD_RESET",
-                        "process-exception-rpc-force-user-password-reset",
+                        Status.CONFLICT,
+                        "CONFLICT-CONDITION-REQUEST-CANNOT-BE-COMPLETED",
+                        "A conflict condition prevents request to be successfully completed.",
                         ex);
             }
         } catch (Throwable ex) {
