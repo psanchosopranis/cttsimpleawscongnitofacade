@@ -402,8 +402,15 @@ paths:
         - $ref: '#/components/parameters/Accept'
         - $ref: '#/components/parameters/Content-Type'
       responses:
-        '204':
-          description: 'The operation requested was successful (NO Body Content is returned)'
+        '201':
+          description: USER-CREATED (El usuario ha sido creado satisfactoriamente)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/user-created-response' 
+              examples:
+                sample201-01:
+                  $ref: '#/components/examples/sample201-01'
         '400':
           description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
           content:
@@ -446,7 +453,7 @@ paths:
               properties:
                 email:
                   type: string
-                  pattern: '^\\+\\d{11,12}$'
+                  pattern: '^[A-Za-z0-9+_.-]+@(.+)$'
                   description: 'eMail del Usuario (debe ser un eMail válido)'
                   example: psanchosopranis@gmail.com
                 name:
@@ -490,7 +497,7 @@ components:
       style: simple
       schema:
         type: string
-        pattern: '^\\+\\d{11,12}$'
+        pattern: '^[A-Za-z0-9+_.-]+@(.+)$'
         description: 'eMail del Usuario (debe ser un eMail válido)'
         example: psanchosopranis@gmail.com
     Content-Type:
@@ -561,7 +568,16 @@ components:
               example: 'TECHEDGE-01a'
             custom:ctt_client_code:
               type: string
-              example: 'TECHEDGE-01b'          
+              example: 'TECHEDGE-01b'   
+    'user-created-response':
+      type: object
+      properties:
+        email:
+          type: string
+          description: 'eMail del usuario creado'
+        user_internal_id:
+          type: string
+          description: 'Identificador interno del usuario generado por AWS Cognito'       
     'common-error-response':
       type: object
       properties:
@@ -577,11 +593,16 @@ components:
           items:
             type: string
   examples:
+    sample201-01:
+      summary: 'OK-201-USER-CREATED'
+      value:
+        email: 'psanchosopranis@gmail.com'
+        user_internal_id": 'f8f44ebe-69a9-480b-ab5c-3c7cf9400d02'
     sample400-01:
       summary: 'ERR-400-BAD-REQUEST-01'
       value:
         errorId: 'BAD-REQUEST'
-        errorAlias": 'error-validacion-datos-para-operacion'
+        errorAlias: 'error-validacion-datos-para-operacion'
         errorMessages": 
         - 'excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]'        
         - 'param userEmail: tiene que corresponder a la expresión regular "^[A-Za-z0-9+_.-]+@(.+)$"'
@@ -589,7 +610,7 @@ components:
       summary: 'ERR-400-BAD-REQUEST-02'
       value:
         errorId: 'VAL-ERROR-001'
-        errorAlias": 'data-validation-error'
+        errorAlias: 'data-validation-error'
         errorMessages": 
         - 'phone_number: la longitud tiene que estar entre 12 y 13'        
         - 'phone_number: tiene que corresponder a la expresión regular "^\+\d{11,12}$"'
@@ -598,7 +619,7 @@ components:
       summary: 'ERR-400-BAD-REQUEST-03'
       value:
         errorId: 'BAD-REQUEST'
-        errorAlias": 'Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.'
+        errorAlias: 'Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.'
         errorMessages": 
         - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException: user.custom:ctt_client_codeX: Attribute does not exist in the schema.\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: feb86706-b5a2-4196-b284-1ca67e6cf5c0, Extended Request ID: null)]'        
         - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException[ user.custom:ctt_client_codeX: Attribute does not exist in the schema.\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: feb86706-b5a2-4196-b284-1ca67e6cf5c0, Extended Request ID: null)]'
@@ -606,21 +627,21 @@ components:
       summary: 'ERR-400-BAD-REQUEST-04'
       value:
         errorId: 'VAL-ERROR-001'
-        errorAlias": 'data-validation-error'
+        errorAlias: 'data-validation-error'
         errorMessages": 
         - 'custom_attributes: Se ha enviado una colección NULA o VACIA de `custom_attributes`.'        
     sample401-01:
       summary: 'ERR-401-UNAUTHORIZED'
       value:
         errorId: 'ERR-401-UNAUTHORIZED'
-        errorAlias": 'invalid-or-missing-credentials'
+        errorAlias: 'invalid-or-missing-credentials'
         errorMessages": 
         - 'Se requieren credenciales válidas (y activas) para acceder a este recurso.'
     sample404-01:
       summary: 'ERR-404-NOT-FOUND'
       value:
         errorId: 'USER-NOT-FOUND'
-        errorAlias": 'El usuario [psanchosopranisX@gmail.com] no existe en el user Pool.'
+        errorAlias: 'El usuario [psanchosopranisX@gmail.com] no existe en el user Pool.'
         errorMessages": 
         - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: b7330534-f0ac-48e9-a76e-f399a0b0a5b6, Extended Request ID: null)]'
         - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: b7330534-f0ac-48e9-a76e-f399a0b0a5b6, Extended Request ID: null)]'        
@@ -628,7 +649,7 @@ components:
       summary: 'ERR-409-CONFLICT-CONDITION-01'
       value:
         errorId: 'CONFLICT-CONDITION-REQUEST-CANNOT-BE-COMPLETED'
-        errorAlias": 'A conflict condition prevents request to be successfully completed.'
+        errorAlias: 'A conflict condition prevents request to be successfully completed.'
         errorMessages": 
         - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException: User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cd1335a4-f8d8-46c0-bd62-3b2f34776123, Extended Request ID: null)]'
         - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException[ User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cd1335a4-f8d8-46c0-bd62-3b2f34776123, Extended Request ID: null)]'        
@@ -636,7 +657,7 @@ components:
       summary: 'ERR-409-CONFLICT-CONDITION-02'
       value:
         errorId: 'USER-IS-DISABLED'
-        errorAlias": 'El usuario [psanchosopranis@gmail.com] está DESHABILITADO.'
+        errorAlias: 'El usuario [psanchosopranis@gmail.com] está DESHABILITADO.'
         errorMessages": 
         - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException: User is disabled. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 2e8bb9da-0439-4aaa-bde8-e5fc04e9f4c4, Extended Request ID: null)]'
         - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException[ User is disabled. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 2e8bb9da-0439-4aaa-bde8-e5fc04e9f4c4, Extended Request ID: null)]'
@@ -644,7 +665,7 @@ components:
       summary: 'ERR-409-CONFLICT-CONDITION-03'
       value:
         errorId: 'USER-WITH-SAME-EMAIL-ALREADY-EXISTS'
-        errorAlias": 'Ya existe un usuario con el mismo eMail [psanchosopranis@gmail.com] en el user Pool.'
+        errorAlias: 'Ya existe un usuario con el mismo eMail [psanchosopranis@gmail.com] en el user Pool.'
         errorMessages": 
         - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException: An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6ce275f8-2362-4cf7-aa03-41a93a603495, Extended Request ID: null)]'
         - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException[ An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6ce275f8-2362-4cf7-aa03-41a93a603495, Extended Request ID: null)]'
