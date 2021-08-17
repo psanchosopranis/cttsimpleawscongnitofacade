@@ -42,6 +42,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -51,6 +60,26 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'
+        '409':
+          description: CONFLICT-CONDITION (Condición de conflicto que impide la ejecución de la solicitud)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample409-01:
+                  $ref: '#/components/examples/sample409-01'   
+                sample409-02:
+                  $ref: '#/components/examples/sample409-02'                                      
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-disable-user/{user_email}:
@@ -65,6 +94,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -74,6 +112,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'                  
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-enable-user/{user_email}:
@@ -88,6 +135,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -97,6 +153,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'                    
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-delete-user/{user_email}:
@@ -111,6 +176,15 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -120,6 +194,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'                    
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-retrieve-user-metadata/{user_email}:
@@ -138,6 +221,15 @@ paths:
             application/json;charset=UTF-8:
               schema:
                 $ref: '#/components/schemas/200-Retrieve-User-Metadata-response' 
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -147,6 +239,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'                    
       tags:
         - AdminUserTasks
   /awscognitofacade/simple/v1/rpc-update-user-attributes/{user_email}:
@@ -162,6 +263,19 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
+                sample401-02:
+                  $ref: '#/components/examples/sample400-02'
+                sample401-03:
+                  $ref: '#/components/examples/sample400-03'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -171,6 +285,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01' 
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'                    
       requestBody:
         required: true
         content:
@@ -218,6 +341,19 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample400-01'
+                sample401-03:
+                  $ref: '#/components/examples/sample400-03'                  
+                sample401-04:
+                  $ref: '#/components/examples/sample400-04'
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -227,6 +363,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '404':
+          description: USER-NOT-FOUND (No existe usuario con el eMail indicado)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-01:
+                  $ref: '#/components/examples/sample404-01'  
       requestBody:
         required: true
         content:
@@ -259,6 +404,17 @@ paths:
       responses:
         '204':
           description: 'The operation requested was successful (NO Body Content is returned)'
+        '400':
+          description: BAD-REQUEST (Datos o Identificadores NO VÁLIDOS)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample401-02:
+                  $ref: '#/components/examples/sample400-02'
+                sample401-03:
+                  $ref: '#/components/examples/sample400-03'                  
         '401':
           description: UNAUTHORIZED (invalid or missing Basic Auth credentials)
           content:
@@ -268,6 +424,15 @@ paths:
               examples:
                 sample401-01:
                   $ref: '#/components/examples/sample401-01'
+        '409':
+          description: CONFLICT-CONDITION (Condición de conflicto que impide la ejecución de la solicitud)
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/common-error-response' 
+              examples:
+                sample409-03:
+                  $ref: '#/components/examples/sample409-03'   
       requestBody:
         required: true
         content:
@@ -412,6 +577,38 @@ components:
           items:
             type: string
   examples:
+    sample400-01:
+      summary: 'ERR-400-BAD-REQUEST-01'
+      value:
+        errorId: 'BAD-REQUEST'
+        errorAlias": 'error-validacion-datos-para-operacion'
+        errorMessages": 
+        - 'excepcion:io.dropwizard.jersey.validation.JerseyViolationException[ (mensaje de error no disponible)]'        
+        - 'param userEmail: tiene que corresponder a la expresión regular "^[A-Za-z0-9+_.-]+@(.+)$"'
+    sample400-02:
+      summary: 'ERR-400-BAD-REQUEST-02'
+      value:
+        errorId: 'VAL-ERROR-001'
+        errorAlias": 'data-validation-error'
+        errorMessages": 
+        - 'phone_number: la longitud tiene que estar entre 12 y 13'        
+        - 'phone_number: tiene que corresponder a la expresión regular "^\+\d{11,12}$"'
+        - 'name: no puede estar vacío'
+    sample400-03:
+      summary: 'ERR-400-BAD-REQUEST-03'
+      value:
+        errorId: 'BAD-REQUEST'
+        errorAlias": 'Se han enviado atributos/parámetros para el usuario [psanchosopranis@gmail.com] no incluidos en el esquema configurado en el user Pool.'
+        errorMessages": 
+        - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException: user.custom:ctt_client_codeX: Attribute does not exist in the schema.\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: feb86706-b5a2-4196-b284-1ca67e6cf5c0, Extended Request ID: null)]'        
+        - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.InvalidParameterException[ user.custom:ctt_client_codeX: Attribute does not exist in the schema.\n (Service: CognitoIdentityProvider, Status Code: 400, Request ID: feb86706-b5a2-4196-b284-1ca67e6cf5c0, Extended Request ID: null)]'
+    sample400-04:
+      summary: 'ERR-400-BAD-REQUEST-04'
+      value:
+        errorId: 'VAL-ERROR-001'
+        errorAlias": 'data-validation-error'
+        errorMessages": 
+        - 'custom_attributes: Se ha enviado una colección NULA o VACIA de `custom_attributes`.'        
     sample401-01:
       summary: 'ERR-401-UNAUTHORIZED'
       value:
@@ -419,6 +616,38 @@ components:
         errorAlias": 'invalid-or-missing-credentials'
         errorMessages": 
         - 'Se requieren credenciales válidas (y activas) para acceder a este recurso.'
+    sample404-01:
+      summary: 'ERR-404-NOT-FOUND'
+      value:
+        errorId: 'USER-NOT-FOUND'
+        errorAlias": 'El usuario [psanchosopranisX@gmail.com] no existe en el user Pool.'
+        errorMessages": 
+        - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException: User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: b7330534-f0ac-48e9-a76e-f399a0b0a5b6, Extended Request ID: null)]'
+        - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UserNotFoundException[ User does not exist. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: b7330534-f0ac-48e9-a76e-f399a0b0a5b6, Extended Request ID: null)]'        
+    sample409-01:
+      summary: 'ERR-409-CONFLICT-CONDITION-01'
+      value:
+        errorId: 'CONFLICT-CONDITION-REQUEST-CANNOT-BE-COMPLETED'
+        errorAlias": 'A conflict condition prevents request to be successfully completed.'
+        errorMessages": 
+        - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException: User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cd1335a4-f8d8-46c0-bd62-3b2f34776123, Extended Request ID: null)]'
+        - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException[ User password cannot be reset in the current state. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: cd1335a4-f8d8-46c0-bd62-3b2f34776123, Extended Request ID: null)]'        
+    sample409-02:
+      summary: 'ERR-409-CONFLICT-CONDITION-02'
+      value:
+        errorId: 'USER-IS-DISABLED'
+        errorAlias": 'El usuario [psanchosopranis@gmail.com] está DESHABILITADO.'
+        errorMessages": 
+        - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException: User is disabled. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 2e8bb9da-0439-4aaa-bde8-e5fc04e9f4c4, Extended Request ID: null)]'
+        - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.NotAuthorizedException[ User is disabled. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 2e8bb9da-0439-4aaa-bde8-e5fc04e9f4c4, Extended Request ID: null)]'
+    sample409-03:
+      summary: 'ERR-409-CONFLICT-CONDITION-03'
+      value:
+        errorId: 'USER-WITH-SAME-EMAIL-ALREADY-EXISTS'
+        errorAlias": 'Ya existe un usuario con el mismo eMail [psanchosopranis@gmail.com] en el user Pool.'
+        errorMessages": 
+        - 'mensaje:com.cttexpress.rest.exceptions.CustomException[ software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException: An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6ce275f8-2362-4cf7-aa03-41a93a603495, Extended Request ID: null)]'
+        - 'causa interna:software.amazon.awssdk.services.cognitoidentityprovider.model.UsernameExistsException[ An account with the given email already exists. (Service: CognitoIdentityProvider, Status Code: 400, Request ID: 6ce275f8-2362-4cf7-aa03-41a93a603495, Extended Request ID: null)]'
   securitySchemes:
     basic:
       type: http
